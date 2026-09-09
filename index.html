@@ -8,9 +8,8 @@
     <meta name="theme-color" content="#06100b">
     <meta name="description" content="منوی دیجیتال کافه نوو">
 
-    <title>Cafe Nevo | CAFE NEVO</title>
+    <title>CAFE NEVO</title>
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -19,15 +18,12 @@
         rel="stylesheet"
     >
 
-    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Background Grain -->
     <div class="grain"></div>
-
 
     <!-- =========================
          TOP BAR
@@ -35,19 +31,14 @@
 
     <header class="topbar">
 
-        <a
+        <button
             class="mini-brand"
-            href="#home"
-            aria-label="Cafe Nevo Home"
+            id="homeLogo"
+            type="button"
         >
-            <img
-                src="logo.jpg"
-                alt="Cafe Nevo"
-            >
-
+            <img src="logo.jpg" alt="Cafe Nevo">
             <span>CAFE NEVO</span>
-        </a>
-
+        </button>
 
         <a
             class="instagram-mini"
@@ -61,83 +52,59 @@
     </header>
 
 
-
     <main>
 
-
         <!-- =========================
-             LOBBY / HOME
+             PAGE 1 — LOBBY
         ========================== -->
 
         <section
-            class="hero screen-active"
-            id="home"
+            class="page lobby-page active-page"
+            id="homePage"
         >
 
-            <div class="orb orb-one"></div>
-            <div class="orb orb-two"></div>
+            <div class="lobby-orb orb-one"></div>
+            <div class="lobby-orb orb-two"></div>
 
+            <div class="lobby-content">
 
-            <div class="hero-inner">
-
-                <!-- Logo -->
-                <div class="logo-frame">
-
+                <div class="lobby-logo">
                     <img
                         src="logo.jpg"
                         alt="لوگوی کافه نوو"
                     >
-
                 </div>
 
+                <span class="lobby-eyebrow">
+                    YOUR MOMENT · YOUR MOOD · YOUR NEVO
+                </span>
 
-                <!-- Small Text -->
-                <div class="eyebrow">
-                    Your moment. Your mood. Your Nevo
-                </div>
+                <h1>
+                    CAFE NEVO
+                </h1>
 
-
-                <!-- Main Title -->
-                <h1>CAFE NEVO</h1>
-
-                <p>
+                <p class="lobby-persian">
                     طعمی نو با کافه نوو
                 </p>
 
-
-                <!-- Menu Button -->
-                <a
-                    href="#categories"
-                    class="hero-btn"
+                <button
+                    class="menu-open-button"
                     id="openMenu"
+                    type="button"
                 >
 
-                    <span class="hero-btn-label">
-
-                        <small>
-                            EXPLORE
-                        </small>
-
-                        <strong>
-                            منوی نوو
-                        </strong>
-
+                    <span>
+                        <small>EXPLORE</small>
+                        <strong>منوی نوو</strong>
                     </span>
 
+                    <b>↗</b>
 
-                    <span class="hero-btn-icon">
-                        ↗
-                    </span>
-
-                </a>
+                </button>
 
             </div>
 
-
-
-            <!-- Hero Bottom Information -->
-
-            <div class="hero-meta">
+            <div class="lobby-bottom">
 
                 <span>
                     LOK JAM · ALMAS PASSAGE · 3F
@@ -149,293 +116,225 @@
 
             </div>
 
-
-
-            <!-- Scroll Indicator -->
-
-            <div class="hero-scroll">
-
-                <span>
-                    SCROLL
-                </span>
-
+            <div class="scroll-indicator">
+                <span>SCROLL</span>
                 <i></i>
-
             </div>
 
         </section>
 
 
-
         <!-- =========================
-             CATEGORY MENU
+             PAGE 2 — CATEGORIES
         ========================== -->
 
         <section
-            class="category-menu"
-            id="categories"
-            aria-hidden="true"
+            class="page categories-page"
+            id="categoriesPage"
         >
 
+            <div class="categories-background"></div>
 
-            <!-- Category Top Bar -->
+            <div class="categories-inner">
 
-            <div class="category-topbar">
+                <!-- Category Header -->
 
+                <div class="categories-header">
 
-                <!-- Back -->
-
-                <a
-                    class="category-nav"
-                    href="#home"
-                    aria-label="بازگشت به لابی"
-                >
-                    ‹
-                </a>
-
-
-                <!-- Center Logo -->
-
-                <div class="category-brand">
-
-                    <img
-                        src="logo.jpg"
-                        alt="Cafe Nevo"
+                    <button
+                        class="page-nav-button"
+                        id="categoriesBack"
+                        type="button"
+                        aria-label="بازگشت"
                     >
+                        ‹
+                    </button>
 
-                </div>
-
-
-                <!-- Search Button -->
-
-                <button
-                    class="category-nav search-btn"
-                    type="button"
-                    aria-label="جستجو"
-                >
-                    ⌕
-                </button>
-
-            </div>
-
-
-
-            <!-- Category Heading -->
-
-            <div class="category-heading">
-
-                <span class="category-mini-brand">
-                    CAFE NEVO
-                </span>
-
-                <h2>
-                    MENU
-                </h2>
-
-                <p>
-                    Choose your favorite
-                </p>
-
-            </div>
-
-
-
-            <!-- Category Cards -->
-
-            <div
-                class="category-cards"
-                id="categoryCards"
-            ></div>
-
-
-
-            <!-- Bottom Line -->
-
-            <div class="category-footer-mark">
-
-                <span></span>
-
-                <b>
-                    NEVO
-                </b>
-
-                <span></span>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             PRODUCTS MENU
-        ========================== -->
-
-        <section
-            class="menu-section"
-            id="menu"
-            aria-hidden="true"
-        >
-
-
-            <!-- Back Button -->
-
-            <div class="product-menu-nav">
-
-                <button
-                    class="back-to-categories"
-                    id="backToCategories"
-                    type="button"
-                >
-                    ← بازگشت به دسته‌بندی‌ها
-                </button>
-
-            </div>
-
-
-
-            <!-- Section Header -->
-
-            <div class="section-head">
-
-                <span class="eyebrow">
-                    NEVO MENU
-                </span>
-
-                <h2>
-                    منوی کافه نوو
-                </h2>
-
-                <p>
-                    انتخاب کن و طعم مورد علاقه‌ات را پیدا کن.
-                </p>
-
-            </div>
-
-
-
-            <!-- =========================
-                 CATEGORY LINE
-            ========================== -->
-
-            <div class="category-wrap">
-
-                <div
-                    class="category-line"
-                    id="categoriesLine"
-                ></div>
-
-            </div>
-
-
-
-            <!-- =========================
-                 PRODUCTS
-            ========================== -->
-
-            <div class="menu-shell">
-
-
-                <!-- Product Header -->
-
-                <div class="menu-head">
-
-                    <div>
-
-                        <span
-                            class="panel-en"
-                            id="categoryEnglish"
+                    <button
+                        class="categories-logo"
+                        id="categoriesLogo"
+                        type="button"
+                        aria-label="خانه"
+                    >
+                        <img
+                            src="logo.jpg"
+                            alt="Cafe Nevo"
                         >
-                            HOT BAR
-                        </span>
+                    </button>
 
-                        <h3 id="categoryTitle">
-                            بار گرم
-                        </h3>
-
-                    </div>
-
-
-                    <div class="leaf-word">
-                        NEVO
-                    </div>
+                    <button
+                        class="page-nav-button search-button"
+                        id="searchButton"
+                        type="button"
+                        aria-label="جستجو"
+                    >
+                        ⌕
+                    </button>
 
                 </div>
 
 
+                <!-- Category Title -->
 
-                <!-- Products Generated By JS -->
+                <div class="categories-title">
+
+                    <span>
+                        CAFE NEVO
+                    </span>
+
+                    <div class="title-with-lines">
+
+                        <i></i>
+
+                        <h2>
+                            MENU
+                        </h2>
+
+                        <i></i>
+
+                    </div>
+
+                    <p>
+                        Choose your favorite
+                    </p>
+
+                </div>
+
+
+                <!-- Category Cards -->
 
                 <div
-                    class="products"
-                    id="products"
+                    class="category-cards"
+                    id="categoryCards"
                 ></div>
 
+
+                <div class="category-end">
+
+                    <span></span>
+
+                    <b>NEVO</b>
+
+                    <span></span>
+
+                </div>
 
             </div>
 
         </section>
 
 
-
         <!-- =========================
-             ABOUT / INFO
+             PAGE 3 — PRODUCTS
         ========================== -->
 
         <section
-            class="info-section"
-            id="info"
+            class="page products-page"
+            id="productsPage"
         >
+
+            <div class="products-inner">
+
+                <div class="products-top">
+
+                    <button
+                        class="products-back"
+                        id="productsBack"
+                        type="button"
+                    >
+                        ← دسته‌بندی‌ها
+                    </button>
+
+                    <button
+                        class="products-logo"
+                        id="productsLogo"
+                        type="button"
+                    >
+                        <img
+                            src="logo.jpg"
+                            alt="Cafe Nevo"
+                        >
+                    </button>
+
+                </div>
+
+
+                <div class="products-heading">
+
+                    <span>
+                        CAFE NEVO · MENU
+                    </span>
+
+                    <h2 id="productCategoryTitle">
+                        بار گرم
+                    </h2>
+
+                    <p id="productCategoryEnglish">
+                        HOT DRINKS
+                    </p>
+
+                </div>
+
+
+                <!-- Category Line -->
+
+                <div class="category-line-wrapper">
+
+                    <div
+                        class="category-line"
+                        id="categoryLine"
+                    ></div>
+
+                </div>
+
+
+                <!-- Products -->
+
+                <div
+                    class="products-list"
+                    id="productsList"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section class="info-section">
 
             <div class="info-card">
 
-                <span class="eyebrow">
+                <span class="section-eyebrow">
                     ABOUT NEVO
                 </span>
-
 
                 <h2>
                     یک مکث خوب، وسط روز.
                 </h2>
-
 
                 <p>
                     کافه نوو در لوک جم، پاساژ الماس، طبقه سوم؛
                     جایی برای قهوه، نوشیدنی، غذا و لحظه‌هایی که ارزش ماندن دارند.
                 </p>
 
-
-
-                <!-- Info Grid -->
-
                 <div class="info-grid">
-
-
-                    <!-- Address -->
 
                     <div class="info-item">
 
-                        <span class="icon">
-                            ⌖
-                        </span>
+                        <span class="info-icon">⌖</span>
 
                         <div>
-
-                            <strong>
-                                آدرس
-                            </strong>
-
+                            <strong>آدرس</strong>
                             <small>
                                 لوک جم، پاساژ الماس، طبقه سوم
                             </small>
-
                         </div>
 
                     </div>
-
-
-
-                    <!-- Instagram -->
 
                     <a
                         class="info-item"
@@ -444,20 +343,11 @@
                         rel="noopener noreferrer"
                     >
 
-                        <span class="icon">
-                            ◎
-                        </span>
+                        <span class="info-icon">◎</span>
 
                         <div>
-
-                            <strong>
-                                Instagram
-                            </strong>
-
-                            <small>
-                                @cafe.nevo
-                            </small>
-
+                            <strong>Instagram</strong>
+                            <small>@cafe.nevo</small>
                         </div>
 
                     </a>
@@ -468,53 +358,7 @@
 
         </section>
 
-
-
-        <!-- =========================
-             QR SECTION
-        ========================== -->
-
-        <section class="qr-section">
-
-            <div class="qr-card">
-
-
-                <div>
-
-                    <span class="eyebrow">
-                        SCAN · VISIT · ENJOY
-                    </span>
-
-
-                    <h2>
-                        منوی نوو، همیشه به‌روز.
-                    </h2>
-
-
-                    <p>
-                        برای ورود به لابی کافه نوو، QR کد را اسکن کنید.
-                    </p>
-
-                </div>
-
-
-
-                <!-- QR -->
-
-                <div class="qr-box">
-
-                    <div class="qr-placeholder">
-                        NEVO
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
     </main>
-
 
 
     <!-- =========================
@@ -522,9 +366,6 @@
     ========================== -->
 
     <footer>
-
-
-        <!-- Footer Brand -->
 
         <div class="footer-brand">
 
@@ -539,17 +380,9 @@
 
         </div>
 
-
-
-        <!-- Location -->
-
         <div class="footer-location">
-            LOK JAM · ALMAS MALL · 3RD FLOOR
+            LOK JAM · ALMAS PASSAGE · 3RD FLOOR
         </div>
-
-
-
-        <!-- Instagram -->
 
         <a
             href="https://instagram.com/cafe.nevo"
@@ -562,11 +395,7 @@
     </footer>
 
 
-
-    <!-- Main JavaScript -->
-
     <script src="script.js"></script>
 
 </body>
-
 </html>
