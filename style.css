@@ -753,3 +753,142 @@ footer a {
     .hero::before { opacity: .75; }
     .logo-frame::after { display: none; }
 }
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #06100b;
+    --bg2: #0b1911;
+    --card: rgba(12, 31, 21, .78);
+    --card2: rgba(18, 43, 28, .65);
+    --green: #9fdf72;
+    --green2: #5dcc8c;
+    --lime: #d9e96a;
+    --white: #f3f7ed;
+    --muted: #9bad9c;
+    --line: rgba(159, 223, 114, .22);
+    --line2: rgba(255, 255, 255, .08);
+    --shadow: 0 25px 80px rgba(0, 0, 0, .35);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    color: var(--white);
+    background:
+        radial-gradient(circle at 80% 5%, rgba(92, 204, 140, .12), transparent 27%),
+        radial-gradient(circle at 10% 45%, rgba(217, 233, 106, .07), transparent 24%),
+        var(--bg);
+    font-family: "Vazirmatn", system-ui, sans-serif;
+    overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+.grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    opacity: .035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+.topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 72px;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 clamp(20px, 5vw, 70px);
+    background: linear-gradient(to bottom, rgba(3, 8, 5, .94), transparent);
+}
+
+.mini-brand { display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .18em; }
+.mini-brand img {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--line);
+}
+.mini-brand .logo-dot {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 1px solid var(--line);
+    display: grid; place-items: center;
+    background: radial-gradient(circle, rgba(159,223,114,.18), rgba(5,14,9,.9));
+    color: var(--green); font-size: 11px; font-weight: 800;
+}
+.instagram-mini {
+    font-size: 12px; color: var(--green);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 12px;
+}
+
+.hero {
+    min-height: 100svh;
+    position: relative;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 100px 20px 70px;
+    background:
+        linear-gradient(rgba(2, 7, 4, .54), rgba(2, 7, 4, .95)),
+        radial-gradient(circle at 50% 38%, rgba(159, 223, 114, .13), transparent 33%);
+    isolation: isolate;
+}
+
+.hero::before {
+    content: "";
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+        radial-gradient(circle at 50% 34%, rgba(159, 223, 114, .075), transparent 25%),
+        radial-gradient(circle at 15% 72%, rgba(93, 204, 140, .035), transparent 24%),
+        radial-gradient(circle at 86% 22%, rgba(217, 233, 106, .025), transparent 23%);
+}
+
+.hero-inner {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; align-items: center;
+    width: 100%;
+    animation: rise .7s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.logo-frame {
+    width: 160px; height: 160px;
+    margin: 0 auto 24px;
+    padding: 10px;
+    border: 1px solid rgba(159, 223, 114, .34);
+    border-radius: 50%;
+    background: rgba(5, 14, 9, .72);
+    box-shadow: 0 0 70px rgba(92, 204, 140, .12);
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+}
+
+.logo-frame::before {
+    content: "";
+    position: absolute; inset: -9px; z-index: -1;
+    border-radius: 50%;
+    border: 1px solid rgba(159, 223, 114, .10);
+    pointer-events: none;
+}
+
+.logo-frame::after {
+    content: "";
+    position: absolute; inset: -24px; z-index: -2;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(159, 223, 114, .075), transparent 67%);
+    pointer-events: none;
+}
+
+.logo-frame img {
+    width: 100%;
+    hei
