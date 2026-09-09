@@ -1,27 +1,20 @@
 /* =========================================================
    CAFE NEVO
-   DIGITAL MENU
-   Lobby → Categories → Products
-   ========================================================= */
+   MENU SYSTEM
+========================================================= */
 
 
 /* =========================================================
    MENU DATA
-   ========================================================= */
+========================================================= */
 
-const menu = {
-
-
-    /* ---------- HOT BAR ---------- */
+const menuData = {
 
     hot: {
-
-        title: "بار گرم",
-
-        en: "HOT BAR",
-
+        fa: "بار گرم",
+        en: "HOT DRINKS",
+        icon: "☕",
         items: [
-
             ["ماچا", 280],
             ["تارو", 328],
             ["اسپرولینا", 317],
@@ -35,22 +28,14 @@ const menu = {
             ["چایی (دو نفره)", 138],
             ["شیر کاکائو با خامه", 248],
             ["کارامل ماکیاتو", 248]
-
         ]
-
     },
 
-
-    /* ---------- COLD BAR ---------- */
-
     cold: {
-
-        title: "بار سرد",
-
-        en: "COLD BAR",
-
+        fa: "بار سرد",
+        en: "COLD DRINKS",
+        icon: "🥤",
         items: [
-
             ["بلک دایموند", 297],
             ["فارست", 287],
             ["رد وایو", 278],
@@ -59,22 +44,14 @@ const menu = {
             ["ولوت پینک", 294],
             ["میدنایت بلو", 287],
             ["رد موهیتو", 378]
-
         ]
-
     },
 
-
-    /* ---------- ESPRESSO ---------- */
-
     espresso: {
-
-        title: "بر پایه اسپرسو",
-
+        fa: "بر پایه اسپرسو",
         en: "ESPRESSO BASED",
-
+        icon: "◉",
         items: [
-
             ["اسپرسو سینگل 70/30", 90],
             ["اسپرسو دبل 70/30", 130],
             ["اسپرسو سینگل 50/50", 90],
@@ -90,22 +67,14 @@ const menu = {
             ["کاپوچینو", 226],
             ["کورتادو", 148],
             ["کن پانا", 155]
-
         ]
-
     },
 
-
-    /* ---------- SHAKE ---------- */
-
     shake: {
-
-        title: "شیک",
-
-        en: "SHAKE",
-
+        fa: "شیک",
+        en: "SHAKES",
+        icon: "♜",
         items: [
-
             ["کره گردو", 380],
             ["شکلات", 350],
             ["اوریو", 380],
@@ -115,42 +84,26 @@ const menu = {
             ["وانیل", 350],
             ["بادام زمینی", 380],
             ["پسته", 428]
-
         ]
-
     },
 
-
-    /* ---------- ICED TEA ---------- */
-
     iced: {
-
-        title: "آیس تی",
-
+        fa: "آیس تی",
         en: "ICED TEA",
-
+        icon: "♧",
         items: [
-
             ["آیس ماچا", 290],
             ["آیس اوبه", 330],
             ["آیس اسپرولینا", 327],
             ["آیس تارو", 338]
-
         ]
-
     },
 
-
-    /* ---------- BREAKFAST ---------- */
-
     breakfast: {
-
-        title: "صبحانه",
-
+        fa: "صبحانه",
         en: "BREAKFAST",
-
+        icon: "⌂",
         items: [
-
             ["نیمرو", 188],
             ["سوسیس تخم مرغ", 237],
             ["سینی ایرانی", 470],
@@ -160,22 +113,14 @@ const menu = {
             ["تست کره بادام زمینی", 270],
             ["املت قارچ پنیر", 288],
             ["اوتمیل", 295]
-
         ]
-
     },
 
-
-    /* ---------- CAKES ---------- */
-
     cake: {
-
-        title: "کیک ها",
-
-        en: "CAKES & DESSERTS",
-
+        fa: "کیک ها",
+        en: "DESSERT",
+        icon: "♧",
         items: [
-
             ["کروسان بستنی", null],
             ["کوکی", null],
             ["کیک سه شیر", null],
@@ -183,44 +128,28 @@ const menu = {
             ["کیک سن سباستین", null],
             ["کیک پای سیب / آلبالو", null],
             ["تیرامیسو", null]
-
         ]
-
     },
 
-
-    /* ---------- SANDWICHES ---------- */
-
     sandwich: {
-
-        title: "ساندویچ ها",
-
+        fa: "ساندویچ ها",
         en: "SANDWICHES",
-
+        icon: "▱",
         items: [
-
             ["استیک برگر", 689],
             ["چیکن برگر", 466],
             ["چیکن اسموکی", 458],
             ["چیکن هانی ماستارد", 469],
             ["سیب زمینی تنوری", 265],
             ["سیب زمینی ویژه", 467]
-
         ]
-
     },
 
-
-    /* ---------- HOOKAH ---------- */
-
     hookah: {
-
-        title: "قلیان ها",
-
-        en: "HOOKAH",
-
+        fa: "قلیان ها",
+        en: "HOOKAHS",
+        icon: "♨",
         items: [
-
             ["آدامس نعنا", 350],
             ["هندونه نعنا", 350],
             ["نعنا یخ", 350],
@@ -232,781 +161,578 @@ const menu = {
             ["هندونه یخ", 350],
             ["بلوبری", 350],
             ["دوسیب آلبالو", 350]
-
         ]
-
     }
 
 };
 
 
 /* =========================================================
-   CATEGORY LIST
-   ========================================================= */
+   CATEGORY ORDER
+========================================================= */
 
-const categoryLabels = [
+const categories = [
 
-    ["hot", "بار گرم", "HOT DRINKS", "☕"],
+    ["hot", "بار گرم", "Hot Drinks", "☕"],
 
-    ["cold", "بار سرد", "COLD DRINKS", "🥤"],
+    ["cold", "بار سرد", "Cold Drinks", "🥤"],
 
-    ["espresso", "بر پایه اسپرسو", "ESPRESSO BASE", "◉"],
+    ["espresso", "بر پایه اسپرسو", "Espresso Based", "◉"],
 
-    ["shake", "شیک", "SHAKES", "♜"],
+    ["shake", "شیک", "Shakes", "♜"],
 
-    ["iced", "آیس تی", "ICED TEA", "♧"],
+    ["iced", "آیس تی", "Iced Tea", "♧"],
 
-    ["breakfast", "صبحانه", "BREAKFAST", "⌂"],
+    ["breakfast", "صبحانه", "Breakfast", "⌂"],
 
-    ["cake", "کیک ها", "CAKES & DESSERTS", "♧"],
+    ["cake", "کیک ها", "Dessert", "♧"],
 
-    ["sandwich", "ساندویچ ها", "SANDWICHES", "▱"],
+    ["sandwich", "ساندویچ ها", "Sandwiches", "▱"],
 
-    ["hookah", "قلیان ها", "HOOKAH", "♨"]
+    ["hookah", "قلیان ها", "Hookahs", "♨"]
 
 ];
 
 
 /* =========================================================
-   GLOBAL STATE
-   ========================================================= */
+   ELEMENTS
+========================================================= */
+
+const homePage =
+    document.getElementById("homePage");
+
+const categoriesPage =
+    document.getElementById("categoriesPage");
+
+const productsPage =
+    document.getElementById("productsPage");
+
+const openMenu =
+    document.getElementById("openMenu");
+
+const categoriesBack =
+    document.getElementById("categoriesBack");
+
+const categoriesLogo =
+    document.getElementById("categoriesLogo");
+
+const productsBack =
+    document.getElementById("productsBack");
+
+const productsLogo =
+    document.getElementById("productsLogo");
+
+const homeLogo =
+    document.getElementById("homeLogo");
+
+const searchButton =
+    document.getElementById("searchButton");
+
+const categoryCards =
+    document.getElementById("categoryCards");
+
+const categoryLine =
+    document.getElementById("categoryLine");
+
+const productsList =
+    document.getElementById("productsList");
+
+const productCategoryTitle =
+    document.getElementById("productCategoryTitle");
+
+const productCategoryEnglish =
+    document.getElementById("productCategoryEnglish");
+
+
+/* =========================================================
+   CURRENT CATEGORY
+========================================================= */
 
 let currentCategory = "hot";
 
 
 /* =========================================================
-   HTML ELEMENTS
-   ========================================================= */
-
-const hero =
-    document.getElementById("home");
-
-const categoryScreen =
-    document.getElementById("categories");
-
-const menuScreen =
-    document.getElementById("menu");
-
-const infoSection =
-    document.getElementById("info");
-
-const qrSection =
-    document.querySelector(".qr-section");
-
-const footer =
-    document.querySelector("footer");
-
-
-const categoryCards =
-    document.getElementById("categoryCards");
-
-const categoriesLine =
-    document.getElementById("categoriesLine");
-
-const products =
-    document.getElementById("products");
-
-const categoryTitle =
-    document.getElementById("categoryTitle");
-
-const categoryEnglish =
-    document.getElementById("categoryEnglish");
-
-
-const openMenuButton =
-    document.getElementById("openMenu");
-
-const backToCategories =
-    document.getElementById("backToCategories");
-
-
-/* =========================================================
-   PRICE FORMAT
-   ========================================================= */
+   PRICE
+========================================================= */
 
 function formatPrice(value) {
 
-    if (
-        value === null ||
-        value === undefined
-    ) {
+    if (value === null || value === undefined) {
 
         return `
-            <span class="price missing">
+            <span class="product-price missing">
                 قیمت اعلام نشده
             </span>
         `;
-
     }
 
-
-    const toman =
-        Number(value) * 1000;
-
+    const toman = Number(value) * 1000;
 
     return `
-        <span class="price">
+        <span class="product-price">
             ${toman.toLocaleString("fa-IR")} تومان
         </span>
     `;
-
 }
 
 
 /* =========================================================
-   HIDE ALL SCREENS
-   ========================================================= */
+   PAGE SWITCHER
+========================================================= */
 
-function hideAllScreens() {
+function showPage(page) {
 
-    const screens = [
+    homePage.classList.remove("active-page");
 
-        hero,
-        categoryScreen,
-        menuScreen
+    categoriesPage.classList.remove("active-page");
 
-    ];
+    productsPage.classList.remove("active-page");
 
+    page.classList.add("active-page");
 
-    screens.forEach(screen => {
-
-        if (!screen) return;
-
-
-        screen.classList.remove(
-            "screen-active"
-        );
-
-
-        screen.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
     });
-
-
-    if (infoSection) {
-
-        infoSection.classList.remove(
-            "screen-active"
-        );
-
-    }
-
-
-    if (qrSection) {
-
-        qrSection.classList.remove(
-            "screen-active"
-        );
-
-    }
-
-
-    if (footer) {
-
-        footer.classList.remove(
-            "screen-active"
-        );
-
-    }
-
 }
 
 
 /* =========================================================
    SHOW LOBBY
-   ========================================================= */
+========================================================= */
 
-function showLobby(updateUrl = true) {
+function showLobby(pushHistory = true) {
 
-    hideAllScreens();
+    showPage(homePage);
 
-
-    hero.classList.add(
-        "screen-active"
-    );
-
-
-    hero.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-
-    /*
-       این سه بخش فقط در Lobby نمایش داده می‌شوند
-    */
-
-    if (infoSection) {
-
-        infoSection.classList.add(
-            "screen-active"
-        );
-
-    }
-
-
-    if (qrSection) {
-
-        qrSection.classList.add(
-            "screen-active"
-        );
-
-    }
-
-
-    if (footer) {
-
-        footer.classList.add(
-            "screen-active"
-        );
-
-    }
-
-
-    if (updateUrl) {
+    if (pushHistory) {
 
         history.pushState(
-            {
-                screen: "lobby"
-            },
-
+            { page: "home" },
             "",
-
-            location.pathname +
-            location.search
+            window.location.pathname +
+            window.location.search
         );
-
     }
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
 }
 
 
 /* =========================================================
    SHOW CATEGORIES
-   ========================================================= */
+========================================================= */
 
-function showCategories(updateUrl = true) {
+function showCategories(pushHistory = true) {
 
-    hideAllScreens();
+    showPage(categoriesPage);
 
-
-    categoryScreen.classList.add(
-        "screen-active"
-    );
-
-
-    categoryScreen.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-
-    if (
-        updateUrl &&
-        location.hash !== "#categories"
-    ) {
+    if (pushHistory) {
 
         history.pushState(
-            {
-                screen: "categories"
-            },
-
+            { page: "categories" },
             "",
-
+            window.location.pathname +
+            window.location.search +
             "#categories"
         );
-
     }
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
 }
 
 
 /* =========================================================
-   SHOW PRODUCT MENU
-   ========================================================= */
+   SHOW PRODUCTS
+========================================================= */
 
-function showMenu(
-    key = "hot",
-    updateUrl = true
-) {
+function showProducts(key, pushHistory = true) {
 
-    if (!menu[key]) {
-
+    if (!menuData[key]) {
         key = "hot";
-
     }
-
 
     currentCategory = key;
 
+    renderProducts(key);
 
-    hideAllScreens();
+    showPage(productsPage);
 
-
-    menuScreen.classList.add(
-        "screen-active"
-    );
-
-
-    menuScreen.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-
-    renderMenu(key);
-
-
-    if (
-        updateUrl &&
-        location.hash !== "#menu"
-    ) {
+    if (pushHistory) {
 
         history.pushState(
             {
-                screen: "menu",
+                page: "products",
                 category: key
             },
-
             "",
-
-            "#menu"
+            window.location.pathname +
+            window.location.search +
+            "#menu-" +
+            key
         );
-
     }
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
 }
 
 
 /* =========================================================
-   CATEGORY CARDS
-   ========================================================= */
+   RENDER CATEGORY CARDS
+========================================================= */
 
 function renderCategoryCards() {
 
-    if (!categoryCards) return;
+    categoryCards.innerHTML = "";
 
+    categories.forEach(
+        ([key, fa, en, icon]) => {
 
-    categoryCards.innerHTML =
+            const card =
+                document.createElement("button");
 
-        categoryLabels
-            .map(
-                ([
-                    key,
-                    persian,
-                    english,
-                    icon
-                ]) => {
+            card.type = "button";
 
-                    return `
+            card.className =
+                "category-card";
 
-                        <button
-                            class="category-card"
-                            type="button"
-                            data-category="${key}"
-                        >
+            card.innerHTML = `
 
-                            <span class="cat-icon">
-                                ${icon}
-                            </span>
+                <div class="category-icon">
+                    ${icon}
+                </div>
 
+                <div class="category-text">
 
-                            <span class="cat-copy">
+                    <span class="english">
+                        ${en}
+                    </span>
 
-                                <strong>
-                                    ${english}
-                                </strong>
+                    <span class="persian">
+                        ${fa}
+                    </span>
 
-                                <small>
-                                    ${persian}
-                                </small>
+                </div>
 
-                            </span>
+                <div class="category-arrow">
+                    ›
+                </div>
 
+                <div class="category-image"></div>
 
-                            <span class="cat-arrow">
-                                ›
-                            </span>
-
-
-                            <span class="cat-image">
-
-                                <span>
-                                    ${icon}
-                                </span>
-
-                            </span>
-
-                        </button>
-
-                    `;
-
-                }
-            )
-            .join("");
-
-
-    categoryCards
-        .querySelectorAll(
-            ".category-card"
-        )
-        .forEach(card => {
+            `;
 
             card.addEventListener(
                 "click",
-                () => {
+                function () {
 
-                    showMenu(
-                        card.dataset.category
-                    );
+                    showProducts(key);
 
                 }
             );
 
-        });
-
+            categoryCards.appendChild(card);
+        }
+    );
 }
 
 
 /* =========================================================
-   CATEGORY LINE
-   ========================================================= */
+   RENDER CATEGORY LINE
+========================================================= */
 
-function renderCategories(active) {
+function renderCategoryLine(activeKey) {
 
-    if (!categoriesLine) return;
+    categoryLine.innerHTML = "";
 
+    categories.forEach(
+        ([key, fa]) => {
 
-    categoriesLine.innerHTML =
+            const button =
+                document.createElement("button");
 
-        categoryLabels
-            .map(
-                ([
-                    key,
-                    label
-                ]) => {
+            button.type = "button";
 
-                    return `
+            button.className =
+                "category-pill";
 
-                        <button
-                            class="
-                                category
-                                ${key === active ? "active" : ""}
-                            "
-                            type="button"
-                            data-category="${key}"
-                        >
-                            ${label}
-                        </button>
+            if (key === activeKey) {
+                button.classList.add("active");
+            }
 
-                    `;
-
-                }
-            )
-            .join("");
-
-
-    categoriesLine
-        .querySelectorAll(
-            ".category"
-        )
-        .forEach(button => {
+            button.textContent = fa;
 
             button.addEventListener(
                 "click",
-                () => {
+                function () {
 
-                    currentCategory =
-                        button.dataset.category;
-
-
-                    renderMenu(
-                        currentCategory
-                    );
+                    showProducts(key);
 
                 }
             );
 
-        });
+            categoryLine.appendChild(button);
+        }
+    );
 
 
-    /*
-       اسکرول خودکار به دسته انتخاب‌شده
-    */
+    /* scroll active button into view */
 
-    const activeButton =
-        categoriesLine.querySelector(
-            ".category.active"
-        );
+    const active =
+        categoryLine.querySelector(".active");
 
-
-    if (activeButton) {
+    if (active) {
 
         setTimeout(() => {
 
-            activeButton.scrollIntoView({
+            active.scrollIntoView({
                 behavior: "smooth",
                 inline: "center",
                 block: "nearest"
             });
 
         }, 50);
-
     }
-
 }
 
 
 /* =========================================================
    RENDER PRODUCTS
-   ========================================================= */
+========================================================= */
 
-function renderMenu(key) {
+function renderProducts(key) {
 
-    const group =
-        menu[key];
+    const category =
+        menuData[key];
 
-
-    if (!group) return;
-
-
-    currentCategory = key;
+    if (!category) return;
 
 
-    categoryTitle.textContent =
-        group.title;
+    productCategoryTitle.textContent =
+        category.fa;
+
+    productCategoryEnglish.textContent =
+        category.en;
 
 
-    categoryEnglish.textContent =
-        group.en;
+    renderCategoryLine(key);
 
 
-    renderCategories(key);
+    productsList.innerHTML = "";
 
 
-    products.innerHTML =
+    category.items.forEach(
+        ([name, price], index) => {
 
-        group.items
-            .map(
-                ([name, price]) => {
+            const row =
+                document.createElement("div");
 
-                    return `
+            row.className =
+                "product-row";
 
-                        <article class="product">
+            row.innerHTML = `
 
-                            <div class="product-info">
+                <div>
 
-                                <p class="product-name">
-                                    ${name}
-                                </p>
+                    <span class="product-name">
+                        ${name}
+                    </span>
 
-                            </div>
+                    <span class="product-number">
+                        ${String(index + 1).padStart(2, "0")}
+                    </span>
 
+                </div>
 
-                            ${formatPrice(price)}
+                ${formatPrice(price)}
 
-                        </article>
+            `;
 
-                    `;
+            productsList.appendChild(row);
 
-                }
-            )
-            .join("");
-
+        }
+    );
 }
 
 
 /* =========================================================
-   HOME / LOBBY BUTTON
-   ========================================================= */
+   LOBBY → CATEGORIES
+========================================================= */
 
-if (openMenuButton) {
+openMenu.addEventListener(
+    "click",
+    function () {
 
-    openMenuButton.addEventListener(
-        "click",
-        event => {
+        showCategories();
 
-            event.preventDefault();
-
-            showCategories();
-
-        }
-    );
-
-}
+    }
+);
 
 
 /* =========================================================
-   BACK TO CATEGORIES
-   ========================================================= */
+   CATEGORIES → LOBBY
+========================================================= */
 
-if (backToCategories) {
+categoriesBack.addEventListener(
+    "click",
+    function () {
 
-    backToCategories.addEventListener(
-        "click",
-        () => {
+        showLobby();
 
-            showCategories();
-
-        }
-    );
-
-}
+    }
+);
 
 
 /* =========================================================
-   TOP LOGO → HOME
-   ========================================================= */
+   CATEGORIES LOGO → LOBBY
+========================================================= */
 
-const miniBrand =
-    document.querySelector(
-        ".mini-brand"
-    );
+categoriesLogo.addEventListener(
+    "click",
+    function () {
 
+        showLobby();
 
-if (miniBrand) {
-
-    miniBrand.addEventListener(
-        "click",
-        event => {
-
-            event.preventDefault();
-
-            showLobby();
-
-        }
-    );
-
-}
+    }
+);
 
 
 /* =========================================================
-   CATEGORY LOGO / BACK BUTTON → HOME
-   ========================================================= */
+   PRODUCTS → CATEGORIES
+========================================================= */
 
-const categoryHomeButton =
-    document.querySelector(
-        ".category-nav[href='#home']"
-    );
+productsBack.addEventListener(
+    "click",
+    function () {
 
+        showCategories();
 
-if (categoryHomeButton) {
-
-    categoryHomeButton.addEventListener(
-        "click",
-        event => {
-
-            event.preventDefault();
-
-            showLobby();
-
-        }
-    );
-
-}
+    }
+);
 
 
 /* =========================================================
-   SEARCH BUTTON
-   ========================================================= */
+   PRODUCTS LOGO → LOBBY
+========================================================= */
 
-const searchButton =
-    document.querySelector(
-        ".search-btn"
-    );
+productsLogo.addEventListener(
+    "click",
+    function () {
+
+        showLobby();
+
+    }
+);
 
 
-if (searchButton) {
+/* =========================================================
+   TOP LOGO → LOBBY
+========================================================= */
 
-    searchButton.addEventListener(
-        "click",
-        () => {
+homeLogo.addEventListener(
+    "click",
+    function () {
 
-            alert(
-                "جستجو به‌زودی به منوی نوو اضافه می‌شود."
-            );
+        showLobby();
 
-        }
-    );
+    }
+);
 
-}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+searchButton.addEventListener(
+    "click",
+    function () {
+
+        alert("جستجوی منو به‌زودی فعال می‌شود.");
+
+    }
+);
 
 
 /* =========================================================
    BROWSER BACK / FORWARD
-   ========================================================= */
+========================================================= */
 
-function routeFromHash() {
+window.addEventListener(
+    "popstate",
+    function () {
+
+        routeFromUrl();
+
+    }
+);
+
+window.addEventListener(
+    "hashchange",
+    function () {
+
+        routeFromUrl();
+
+    }
+);
+
+
+/* =========================================================
+   URL ROUTER
+========================================================= */
+
+function routeFromUrl() {
 
     const hash =
         window.location.hash;
 
+
+    /* Lobby */
+
+    if (!hash) {
+
+        showLobby(false);
+
+        return;
+    }
+
+
+    /* Categories */
 
     if (hash === "#categories") {
 
         showCategories(false);
 
         return;
-
     }
 
 
-    if (hash === "#menu") {
+    /* Product pages */
 
-        showMenu(
-            currentCategory,
-            false
-        );
+    if (hash.startsWith("#menu-")) {
+
+        const key =
+            hash.replace("#menu-", "");
+
+        if (menuData[key]) {
+
+            showProducts(key, false);
+
+        } else {
+
+            showProducts("hot", false);
+
+        }
 
         return;
-
     }
 
 
+    /* Unknown hash */
+
     showLobby(false);
-
 }
-
-
-window.addEventListener(
-    "popstate",
-    routeFromHash
-);
-
-
-window.addEventListener(
-    "hashchange",
-    routeFromHash
-);
 
 
 /* =========================================================
    INITIALIZE
-   ========================================================= */
+========================================================= */
 
 renderCategoryCards();
 
-renderMenu("hot");
+renderProducts("hot");
 
-routeFromHash();
+routeFromUrl();
