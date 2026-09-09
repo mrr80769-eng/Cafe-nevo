@@ -1,12 +1,12 @@
-/* =========================================================
+/* =====================================================
    CAFE NEVO
-   MENU SYSTEM
-========================================================= */
+   MULTI PAGE MENU SYSTEM
+===================================================== */
 
 
-/* =========================================================
+/* =====================================================
    MENU DATA
-========================================================= */
+===================================================== */
 
 const menuData = {
 
@@ -31,6 +31,7 @@ const menuData = {
         ]
     },
 
+
     cold: {
         fa: "بار سرد",
         en: "COLD DRINKS",
@@ -46,6 +47,7 @@ const menuData = {
             ["رد موهیتو", 378]
         ]
     },
+
 
     espresso: {
         fa: "بر پایه اسپرسو",
@@ -70,6 +72,7 @@ const menuData = {
         ]
     },
 
+
     shake: {
         fa: "شیک",
         en: "SHAKES",
@@ -87,6 +90,7 @@ const menuData = {
         ]
     },
 
+
     iced: {
         fa: "آیس تی",
         en: "ICED TEA",
@@ -98,6 +102,7 @@ const menuData = {
             ["آیس تارو", 338]
         ]
     },
+
 
     breakfast: {
         fa: "صبحانه",
@@ -116,6 +121,7 @@ const menuData = {
         ]
     },
 
+
     cake: {
         fa: "کیک ها",
         en: "DESSERT",
@@ -131,6 +137,7 @@ const menuData = {
         ]
     },
 
+
     sandwich: {
         fa: "ساندویچ ها",
         en: "SANDWICHES",
@@ -144,6 +151,7 @@ const menuData = {
             ["سیب زمینی ویژه", 467]
         ]
     },
+
 
     hookah: {
         fa: "قلیان ها",
@@ -167,9 +175,10 @@ const menuData = {
 };
 
 
-/* =========================================================
+
+/* =====================================================
    CATEGORY ORDER
-========================================================= */
+===================================================== */
 
 const categories = [
 
@@ -194,9 +203,10 @@ const categories = [
 ];
 
 
-/* =========================================================
+
+/* =====================================================
    ELEMENTS
-========================================================= */
+===================================================== */
 
 const homePage =
     document.getElementById("homePage");
@@ -244,20 +254,17 @@ const productCategoryEnglish =
     document.getElementById("productCategoryEnglish");
 
 
-/* =========================================================
-   CURRENT CATEGORY
-========================================================= */
 
-let currentCategory = "hot";
-
-
-/* =========================================================
+/* =====================================================
    PRICE
-========================================================= */
+===================================================== */
 
 function formatPrice(value) {
 
-    if (value === null || value === undefined) {
+    if (
+        value === null ||
+        value === undefined
+    ) {
 
         return `
             <span class="product-price missing">
@@ -266,7 +273,10 @@ function formatPrice(value) {
         `;
     }
 
-    const toman = Number(value) * 1000;
+
+    const toman =
+        Number(value) * 1000;
+
 
     return `
         <span class="product-price">
@@ -276,85 +286,108 @@ function formatPrice(value) {
 }
 
 
-/* =========================================================
-   PAGE SWITCHER
-========================================================= */
+
+/* =====================================================
+   PAGE CONTROL
+===================================================== */
 
 function showPage(page) {
 
-    homePage.classList.remove("active-page");
+    homePage.classList.remove(
+        "active-page"
+    );
 
-    categoriesPage.classList.remove("active-page");
+    categoriesPage.classList.remove(
+        "active-page"
+    );
 
-    productsPage.classList.remove("active-page");
+    productsPage.classList.remove(
+        "active-page"
+    );
 
-    page.classList.add("active-page");
 
-    window.scrollTo({
-        top: 0,
-        behavior: "instant"
-    });
+    page.classList.add(
+        "active-page"
+    );
+
+
+    window.scrollTo(
+        0,
+        0
+    );
 }
 
 
-/* =========================================================
-   SHOW LOBBY
-========================================================= */
 
-function showLobby(pushHistory = true) {
+/* =====================================================
+   LOBBY
+===================================================== */
+
+function showLobby(push = true) {
 
     showPage(homePage);
 
-    if (pushHistory) {
+
+    if (push) {
 
         history.pushState(
-            { page: "home" },
+            {
+                page: "home"
+            },
             "",
-            window.location.pathname +
-            window.location.search
+            window.location.pathname
         );
     }
 }
 
 
-/* =========================================================
-   SHOW CATEGORIES
-========================================================= */
 
-function showCategories(pushHistory = true) {
+/* =====================================================
+   CATEGORIES
+===================================================== */
+
+function showCategories(push = true) {
 
     showPage(categoriesPage);
 
-    if (pushHistory) {
+
+    if (push) {
 
         history.pushState(
-            { page: "categories" },
+            {
+                page: "categories"
+            },
             "",
             window.location.pathname +
-            window.location.search +
             "#categories"
         );
     }
 }
 
 
-/* =========================================================
-   SHOW PRODUCTS
-========================================================= */
 
-function showProducts(key, pushHistory = true) {
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+function showProducts(
+    key,
+    push = true
+) {
 
     if (!menuData[key]) {
+
         key = "hot";
     }
 
-    currentCategory = key;
 
     renderProducts(key);
 
+
     showPage(productsPage);
 
-    if (pushHistory) {
+
+    if (push) {
 
         history.pushState(
             {
@@ -363,7 +396,6 @@ function showProducts(key, pushHistory = true) {
             },
             "",
             window.location.pathname +
-            window.location.search +
             "#menu-" +
             key
         );
@@ -371,24 +403,43 @@ function showProducts(key, pushHistory = true) {
 }
 
 
-/* =========================================================
-   RENDER CATEGORY CARDS
-========================================================= */
+
+/* =====================================================
+   CATEGORY CARDS
+===================================================== */
 
 function renderCategoryCards() {
 
     categoryCards.innerHTML = "";
 
+
     categories.forEach(
-        ([key, fa, en, icon]) => {
+        function (category) {
+
+            const key =
+                category[0];
+
+            const fa =
+                category[1];
+
+            const en =
+                category[2];
+
+            const icon =
+                category[3];
+
 
             const card =
-                document.createElement("button");
+                document.createElement(
+                    "button"
+                );
+
 
             card.type = "button";
 
             card.className =
                 "category-card";
+
 
             card.innerHTML = `
 
@@ -416,6 +467,7 @@ function renderCategoryCards() {
 
             `;
 
+
             card.addEventListener(
                 "click",
                 function () {
@@ -425,36 +477,61 @@ function renderCategoryCards() {
                 }
             );
 
-            categoryCards.appendChild(card);
+
+            categoryCards.appendChild(
+                card
+            );
+
         }
     );
 }
 
 
-/* =========================================================
-   RENDER CATEGORY LINE
-========================================================= */
 
-function renderCategoryLine(activeKey) {
+/* =====================================================
+   CATEGORY LINE
+===================================================== */
+
+function renderCategoryLine(
+    activeKey
+) {
 
     categoryLine.innerHTML = "";
 
+
     categories.forEach(
-        ([key, fa]) => {
+        function (category) {
+
+            const key =
+                category[0];
+
+            const fa =
+                category[1];
+
 
             const button =
-                document.createElement("button");
+                document.createElement(
+                    "button"
+                );
+
 
             button.type = "button";
 
             button.className =
                 "category-pill";
 
+
             if (key === activeKey) {
-                button.classList.add("active");
+
+                button.classList.add(
+                    "active"
+                );
             }
 
-            button.textContent = fa;
+
+            button.textContent =
+                fa;
+
 
             button.addEventListener(
                 "click",
@@ -465,45 +542,58 @@ function renderCategoryLine(activeKey) {
                 }
             );
 
-            categoryLine.appendChild(button);
+
+            categoryLine.appendChild(
+                button
+            );
+
         }
     );
 
 
-    /* scroll active button into view */
-
     const active =
-        categoryLine.querySelector(".active");
+        categoryLine.querySelector(
+            ".active"
+        );
+
 
     if (active) {
 
-        setTimeout(() => {
+        setTimeout(
+            function () {
 
-            active.scrollIntoView({
-                behavior: "smooth",
-                inline: "center",
-                block: "nearest"
-            });
+                active.scrollIntoView({
+                    behavior: "smooth",
+                    inline: "center",
+                    block: "nearest"
+                });
 
-        }, 50);
+            },
+            50
+        );
     }
 }
 
 
-/* =========================================================
-   RENDER PRODUCTS
-========================================================= */
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
 
 function renderProducts(key) {
 
     const category =
         menuData[key];
 
-    if (!category) return;
+
+    if (!category) {
+        return;
+    }
 
 
     productCategoryTitle.textContent =
         category.fa;
+
 
     productCategoryEnglish.textContent =
         category.en;
@@ -516,13 +606,24 @@ function renderProducts(key) {
 
 
     category.items.forEach(
-        ([name, price], index) => {
+        function (item, index) {
+
+            const name =
+                item[0];
+
+            const price =
+                item[1];
+
 
             const row =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
+
 
             row.className =
                 "product-row";
+
 
             row.innerHTML = `
 
@@ -542,16 +643,23 @@ function renderProducts(key) {
 
             `;
 
-            productsList.appendChild(row);
+
+            productsList.appendChild(
+                row
+            );
 
         }
     );
 }
 
 
-/* =========================================================
-   LOBBY → CATEGORIES
-========================================================= */
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+
+/* Lobby → Categories */
 
 openMenu.addEventListener(
     "click",
@@ -563,9 +671,7 @@ openMenu.addEventListener(
 );
 
 
-/* =========================================================
-   CATEGORIES → LOBBY
-========================================================= */
+/* Categories → Lobby */
 
 categoriesBack.addEventListener(
     "click",
@@ -577,9 +683,7 @@ categoriesBack.addEventListener(
 );
 
 
-/* =========================================================
-   CATEGORIES LOGO → LOBBY
-========================================================= */
+/* Category logo → Lobby */
 
 categoriesLogo.addEventListener(
     "click",
@@ -591,9 +695,7 @@ categoriesLogo.addEventListener(
 );
 
 
-/* =========================================================
-   PRODUCTS → CATEGORIES
-========================================================= */
+/* Products → Categories */
 
 productsBack.addEventListener(
     "click",
@@ -605,9 +707,7 @@ productsBack.addEventListener(
 );
 
 
-/* =========================================================
-   PRODUCTS LOGO → LOBBY
-========================================================= */
+/* Products logo → Lobby */
 
 productsLogo.addEventListener(
     "click",
@@ -619,9 +719,7 @@ productsLogo.addEventListener(
 );
 
 
-/* =========================================================
-   TOP LOGO → LOBBY
-========================================================= */
+/* Top logo → Lobby */
 
 homeLogo.addEventListener(
     "click",
@@ -633,23 +731,24 @@ homeLogo.addEventListener(
 );
 
 
-/* =========================================================
-   SEARCH
-========================================================= */
+/* Search */
 
 searchButton.addEventListener(
     "click",
     function () {
 
-        alert("جستجوی منو به‌زودی فعال می‌شود.");
+        alert(
+            "جستجوی منو به‌زودی فعال می‌شود."
+        );
 
     }
 );
 
 
-/* =========================================================
+
+/* =====================================================
    BROWSER BACK / FORWARD
-========================================================= */
+===================================================== */
 
 window.addEventListener(
     "popstate",
@@ -659,6 +758,7 @@ window.addEventListener(
 
     }
 );
+
 
 window.addEventListener(
     "hashchange",
@@ -670,9 +770,10 @@ window.addEventListener(
 );
 
 
-/* =========================================================
+
+/* =====================================================
    URL ROUTER
-========================================================= */
+===================================================== */
 
 function routeFromUrl() {
 
@@ -692,7 +793,9 @@ function routeFromUrl() {
 
     /* Categories */
 
-    if (hash === "#categories") {
+    if (
+        hash === "#categories"
+    ) {
 
         showCategories(false);
 
@@ -700,36 +803,48 @@ function routeFromUrl() {
     }
 
 
-    /* Product pages */
+    /* Products */
 
-    if (hash.startsWith("#menu-")) {
+    if (
+        hash.startsWith("#menu-")
+    ) {
 
         const key =
-            hash.replace("#menu-", "");
+            hash.replace(
+                "#menu-",
+                ""
+            );
+
 
         if (menuData[key]) {
 
-            showProducts(key, false);
+            showProducts(
+                key,
+                false
+            );
 
         } else {
 
-            showProducts("hot", false);
-
+            showProducts(
+                "hot",
+                false
+            );
         }
 
         return;
     }
 
 
-    /* Unknown hash */
+    /* Unknown */
 
     showLobby(false);
 }
 
 
-/* =========================================================
-   INITIALIZE
-========================================================= */
+
+/* =====================================================
+   START
+===================================================== */
 
 renderCategoryCards();
 
