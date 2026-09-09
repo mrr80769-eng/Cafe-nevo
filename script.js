@@ -181,16 +181,15 @@ function formatPrice(value) {
 
 /* ================= CATEGORIES ================= */
 function renderCategories(active) {
-  categories.innerHTML = categoryLabels
-    .map(([key, label]) => {
-      return `<button class="category ${key === active ? "active" : ""}" data-category="${key}">${label}</button>`;
-    })
-    .join("");
+  categories.querySelectorAll(".menu-category").forEach(button => {
+    button.classList.toggle(
+      "active",
+      button.dataset.category === active
+    );
 
-  categories.querySelectorAll(".category").forEach(button => {
-    button.addEventListener("click", () => {
+    button.onclick = () => {
       renderMenu(button.dataset.category);
-    });
+    };
   });
 }
 
