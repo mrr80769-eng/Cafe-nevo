@@ -1,373 +1,344 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="theme-color" content="#06100b">
-    <meta name="description" content="منوی دیجیتال کافه نوو">
+  <title>Cafe Nevo | Menu</title>
 
-    <title>CAFE NEVO</title>
+  <meta
+    name="description"
+    content="منوی دیجیتال کافه نوو"
+  />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<div class="grain"></div>
+  <!-- =========================
+       GLOBAL TOP BAR
+  ========================== -->
+  <header class="topbar">
 
-
-<!-- =====================================================
-     TOP BAR
-===================================================== -->
-
-<header class="topbar">
-
-    <button
-        class="mini-brand"
-        id="homeLogo"
-        type="button"
-    >
-        <img src="logo.jpg" alt="Cafe Nevo">
-        <span>CAFE NEVO</span>
+    <button class="brand-button" id="topLogoBtn" aria-label="صفحه اصلی">
+      <img src="logo.jpg" alt="Cafe Nevo Logo">
     </button>
 
     <a
-        class="instagram-mini"
-        href="https://instagram.com/cafe.nevo"
-        target="_blank"
-        rel="noopener noreferrer"
+      class="instagram-top"
+      href="https://instagram.com/cafe.nevo"
+      target="_blank"
+      rel="noopener"
     >
-        @cafe.nevo
+      Instagram
     </a>
 
-</header>
+  </header>
 
 
-<main>
+  <!-- =========================
+       1. LOBBY
+  ========================== -->
+  <main>
 
+    <section class="page lobby-page active-page" id="homePage">
 
-<!-- =====================================================
-     PAGE 1 — LOBBY
-===================================================== -->
+      <div class="lobby-bg"></div>
+      <div class="lobby-overlay"></div>
 
-<section
-    class="page lobby-page active-page"
-    id="homePage"
->
+      <div class="lobby-frame"></div>
 
-    <div class="lobby-orb orb-one"></div>
-    <div class="lobby-orb orb-two"></div>
+      <div class="lobby-content">
 
-    <div class="lobby-content">
-
-        <div class="lobby-logo">
-
-            <img
-                src="logo.jpg"
-                alt="لوگوی کافه نوو"
-            >
-
+        <div class="lobby-language">
+          EN
         </div>
 
-        <span class="lobby-eyebrow">
-            YOUR MOMENT · YOUR MOOD · YOUR NEVO
-        </span>
-
-        <h1>
-            CAFE NEVO
-        </h1>
-
-        <p class="lobby-persian">
-            طعمی نو با کافه نوو
-        </p>
-
-        <button
-            class="menu-open-button"
-            id="openMenu"
-            type="button"
-        >
-
-            <span>
-
-                <small>
-                    EXPLORE
-                </small>
-
-                <strong>
-                    منوی نوو
-                </strong>
-
-            </span>
-
-            <b>
-                ↗
-            </b>
-
+        <button class="lobby-menu-icon" id="lobbyMenuIcon">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
-    </div>
+        <div class="lobby-logo-wrap">
+          <div class="logo-glow"></div>
+          <img src="logo.jpg" alt="Cafe Nevo" class="lobby-logo">
+        </div>
+
+        <div class="lobby-brand">
+          <span>CAFE NEVO</span>
+        </div>
+
+        <div class="lobby-subtitle">
+          GOOD FOOD
+          <b>·</b>
+          GREAT COFFEE
+          <b>·</b>
+          BETTER MOOD
+        </div>
+
+        <button class="menu-main-btn" id="openMenuBtn">
+          <span>مشاهده منو</span>
+          <span class="btn-arrow">›</span>
+        </button>
+
+      </div>
 
 
-    <div class="lobby-bottom">
+      <div class="lobby-bottom">
 
-        <span>
-            LOK JAM · ALMAS PASSAGE · 3F
-        </span>
+        <div class="social-info">
+          <div class="social-icon">◎</div>
 
-        <span>
-            CAFE NEVO
-        </span>
+          <div>
+            <small>INSTAGRAM</small>
+            <span>@cafe.nevo</span>
+          </div>
+        </div>
 
-    </div>
+        <div class="location-info">
 
+          <div class="location-pin">
+            ♧
+          </div>
 
-    <div class="scroll-indicator">
-
-        <span>
-            SCROLL
-        </span>
-
-        <i></i>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PAGE 2 — CATEGORIES
-===================================================== -->
-
-<section
-    class="page categories-page"
-    id="categoriesPage"
->
-
-    <div class="categories-background"></div>
-
-    <div class="categories-inner">
-
-
-        <div class="categories-header">
-
-            <button
-                class="page-nav-button"
-                id="categoriesBack"
-                type="button"
-            >
-                ‹
-            </button>
-
-
-            <button
-                class="categories-logo"
-                id="categoriesLogo"
-                type="button"
-            >
-
-                <img
-                    src="logo.jpg"
-                    alt="Cafe Nevo"
-                >
-
-            </button>
-
-
-            <button
-                class="page-nav-button search-button"
-                id="searchButton"
-                type="button"
-            >
-                ⌕
-            </button>
+          <div>
+            <small>LOCATION</small>
+            <span>Lok Jam · Almas Mall</span>
+            <span>3rd Floor</span>
+          </div>
 
         </div>
 
+      </div>
+
+      <div class="lobby-scroll">
+        <span></span>
+      </div>
+
+    </section>
 
 
-        <div class="categories-title">
+    <!-- =========================
+         2. CATEGORY PAGE
+    ========================== -->
 
-            <span>
-                CAFE NEVO
-            </span>
+    <section class="page categories-page" id="categoriesPage">
 
+      <div class="category-bg"></div>
 
-            <div class="title-with-lines">
+      <div class="category-page-inner">
 
-                <i></i>
+        <div class="category-top">
 
-                <h2>
-                    MENU
-                </h2>
+          <button class="nav-icon back-btn" id="categoriesBackBtn">
+            ‹
+          </button>
 
-                <i></i>
+          <button class="category-logo-btn" id="categoriesLogoBtn">
+            <img src="logo.jpg" alt="Cafe Nevo">
+          </button>
 
-            </div>
-
-
-            <p>
-                Choose your favorite
-            </p>
-
-        </div>
-
-
-
-        <div
-            class="category-cards"
-            id="categoryCards"
-        ></div>
-
-
-
-        <div class="category-end">
-
+          <button class="nav-icon search-btn" id="searchBtn">
             <span></span>
-
-            <b>
-                NEVO
-            </b>
-
-            <span></span>
+          </button>
 
         </div>
 
-    </div>
 
-</section>
+        <div class="category-heading">
+
+          <div class="heading-logo">
+            <img src="logo.jpg" alt="Cafe Nevo">
+          </div>
+
+          <h1>CAFE NEVO</h1>
+
+          <div class="menu-heading-row">
+            <span></span>
+            <strong>MENU</strong>
+            <span></span>
+          </div>
+
+          <p>Choose your favorite</p>
+
+        </div>
 
 
+        <div class="category-list" id="categoryList"></div>
 
-<!-- =====================================================
-     PAGE 3 — PRODUCTS
-===================================================== -->
 
-<section
-    class="page products-page"
-    id="productsPage"
->
+        <div class="category-footer-mark">
+          <span>CAFE NEVO</span>
+          <small>GOOD FOOD · GREAT COFFEE · BETTER MOOD</small>
+        </div>
 
-    <div class="products-inner">
+      </div>
 
+    </section>
+
+
+    <!-- =========================
+         3. PRODUCTS PAGE
+    ========================== -->
+
+    <section class="page products-page" id="productsPage">
+
+      <div class="products-bg"></div>
+
+      <div class="products-inner">
 
         <div class="products-top">
 
-            <button
-                class="products-back"
-                id="productsBack"
-                type="button"
-            >
-                ← دسته‌بندی‌ها
-            </button>
+          <button
+            class="nav-icon back-btn"
+            id="productsBackBtn"
+            aria-label="بازگشت"
+          >
+            ‹
+          </button>
 
+          <button
+            class="products-logo-btn"
+            id="productsLogoBtn"
+            aria-label="خانه"
+          >
+            <img src="logo.jpg" alt="Cafe Nevo">
+          </button>
 
-            <button
-                class="products-logo"
-                id="productsLogo"
-                type="button"
-            >
-
-                <img
-                    src="logo.jpg"
-                    alt="Cafe Nevo"
-                >
-
-            </button>
+          <div class="products-top-space"></div>
 
         </div>
-
 
 
         <div class="products-heading">
 
-            <span>
-                CAFE NEVO · MENU
-            </span>
-
-            <h2 id="productCategoryTitle">
-                بار گرم
-            </h2>
-
-            <p id="productCategoryEnglish">
-                HOT DRINKS
-            </p>
-
-        </div>
-
-
-
-        <div class="category-line-wrapper">
-
-            <div
-                class="category-line"
-                id="categoryLine"
-            ></div>
-
-        </div>
-
-
-
-        <div
-            class="products-list"
-            id="productsList"
-        ></div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <div class="footer-brand">
-
-        <img
-            src="logo.jpg"
-            alt="Cafe Nevo"
-        >
-
-        <span>
+          <div class="products-eyebrow">
             CAFE NEVO
-        </span>
+          </div>
 
-    </div>
+          <h2 id="productsTitle">
+            بار گرم
+          </h2>
 
+          <div class="products-title-line">
+            <span></span>
+            <i></i>
+            <span></span>
+          </div>
 
-    <div class="footer-location">
-        LOK JAM · ALMAS PASSAGE · 3RD FLOOR
-    </div>
+          <p id="productsEnglish">
+            Hot Drinks
+          </p>
 
-
-    <a
-        href="https://instagram.com/cafe.nevo"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        @cafe.nevo
-    </a>
-
-</footer>
+        </div>
 
 
-<script src="script.js"></script>
+        <div class="category-switcher" id="categoryLine"></div>
+
+
+        <div class="products-list" id="productsList"></div>
+
+
+        <button class="about-cafe-btn" id="aboutCafeBtn">
+          <span>درباره کافه نوو</span>
+          <b>›</b>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         4. ABOUT CAFE
+    ========================== -->
+
+    <section class="page about-page" id="aboutPage">
+
+      <div class="about-bg"></div>
+
+      <div class="about-inner">
+
+        <button class="about-back-btn" id="aboutBackBtn">
+          ‹
+        </button>
+
+        <div class="about-logo">
+          <img src="logo.jpg" alt="Cafe Nevo">
+        </div>
+
+        <div class="about-brand">
+          CAFE NEVO
+        </div>
+
+        <div class="about-line">
+          <span></span>
+          <i></i>
+          <span></span>
+        </div>
+
+        <p class="about-label">
+          ABOUT US
+        </p>
+
+        <h2>
+          یک حال خوب،
+          <br>
+          یک طعم نو
+        </h2>
+
+        <p class="about-text">
+          کافه نوو جایی برای مکث کردن، نوشیدن،
+          گفتگو و ساختن لحظه‌هایی متفاوت است.
+          ما تلاش می‌کنیم هر فنجان قهوه و هر طعم،
+          بخشی از یک تجربه خوب برای شما باشد.
+        </p>
+
+        <div class="about-location">
+
+          <div class="about-location-icon">
+            ♧
+          </div>
+
+          <div>
+            <strong>لوک جم، پاساژ الماس</strong>
+            <span>طبقه سوم</span>
+          </div>
+
+        </div>
+
+
+        <a
+          class="about-instagram"
+          href="https://instagram.com/cafe.nevo"
+          target="_blank"
+          rel="noopener"
+        >
+          @cafe.nevo
+        </a>
+
+
+        <div class="about-footer">
+          GOOD FOOD · GREAT COFFEE · BETTER MOOD
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="script.js"></script>
 
 </body>
 </html>
