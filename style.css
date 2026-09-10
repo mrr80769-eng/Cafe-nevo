@@ -546,16 +546,6 @@ button {
 
 /* ================= CATEGORY CARD ================= */
 
-.menu-categories {
-    width: min(100%, 850px);
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-}
-
 .menu-category {
     width: 100%;
     max-width: 850px;
