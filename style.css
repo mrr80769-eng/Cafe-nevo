@@ -744,10 +744,9 @@ footer a {
 .menu-categories {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin: 30px 0;
+    gap: 14px;
+    margin: 15px 0;
 }
-
 .menu-category {
     position: relative;
     display: flex;
