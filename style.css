@@ -422,6 +422,115 @@ button {
     font-size: 13px;
     margin: 0;
 }
+/* ================= MENU PAGE HEADER ================= */
+
+.menu-page-head {
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: 28px;
+}
+
+.menu-logo {
+    width: 78px;
+    height: 78px;
+    margin: 0 auto 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    display: block;
+}
+
+.menu-page-head h1 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: .12em;
+
+    color: #dcefa0;
+}
+
+.menu-title-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    margin: 5px auto 2px;
+}
+
+.menu-title-line span {
+    width: 85px;
+    height: 1px;
+
+    background: rgba(159, 223, 114, .75);
+}
+
+.menu-title-line h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 31px;
+    font-weight: 400;
+    letter-spacing: .22em;
+
+    color: #dcefa0;
+}
+
+.menu-page-head > p {
+    margin: 0;
+
+    color: rgba(243, 247, 237, .72);
+
+    font-size: 14px;
+    font-weight: 300;
+
+    letter-spacing: .18em;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 720px) {
+
+    .menu-logo {
+        width: 62px;
+        height: 62px;
+        margin-bottom: 8px;
+    }
+
+    .menu-page-head h1 {
+        font-size: 25px;
+    }
+
+    .menu-title-line {
+        gap: 15px;
+    }
+
+    .menu-title-line span {
+        width: 55px;
+    }
+
+    .menu-title-line h2 {
+        font-size: 25px;
+    }
+
+    .menu-page-head > p {
+        font-size: 11px;
+    }
+}
 
 /* ================= MENU CATEGORY CARDS ================= */
 
