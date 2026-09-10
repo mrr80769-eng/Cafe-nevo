@@ -546,41 +546,20 @@ button {
 
 /* ================= CATEGORY CARD ================= */
 
-.menu-category {
-    position: relative;
+.menu-categories {
+    width: min(100%, 850px);
+    margin: 0 auto;
 
-    width: 100%;
-    height: 134px;
-    min-height: 134px;
-
-    display: block;
-    padding: 0;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(159, 223, 114, .65);
-    border-radius: 23px;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(3, 13, 7, .98) 0%,
-            rgba(4, 17, 9, .96) 43%,
-            rgba(5, 20, 11, .74) 72%,
-            rgba(5, 19, 10, .30) 100%
-        );
-
-    color: #fff;
-    cursor: pointer;
-    text-align: left;
-
-    transition:
-        transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
 }
 
-
+.menu-category {
+    width: 100%;
+    max-width: 850px;
+}
 /* ================= CATEGORY IMAGE ================= */
 
 .menu-category img {
