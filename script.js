@@ -170,8 +170,8 @@ const products = document.getElementById("products");
 const categoryTitle = document.getElementById("categoryTitle");
 const categoryEnglish = document.getElementById("categoryEnglish");
 
-/* ================= PRICE ================= *
-/
+/* ================= PRICE ================= */
+
 function formatPrice(value) {
   if (value === null) {
     return `<span class="price missing">قیمت اعلام نشده</span>`;
