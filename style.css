@@ -437,26 +437,7 @@ button {
     display: none;
 }
 
-.category-line {
-    display: flex;
-    gap: 9px;
-    min-width: max-content;
-    justify-content: center;
-    border-bottom: 1px solid var(--line2);
-    padding-bottom: 12px;
-}
 
-.category {
-    border: 1px solid rgba(159, 223, 114, .5);
-    background: rgba(7, 18, 13, .86);
-    color: var(--white);
-    padding: 10px 17px;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: .22s ease;
-    white-space: nowrap;
-    font-size: 12px;
-}
 
 .category.active {
     background:
