@@ -2,74 +2,7 @@
    CAFE NEVO DIGITAL MENU
    ===================================================== */
 
-/* ================= MENU DATA ================= */
 const menu = {
-  /* ---------- HOOKAH ---------- */
-  hookah: {
-    title: "قلیان ها",
-    en: "HOOKAH",
-    items: [
-      ["آدامس نعنا", 350],
-      ["هندونه نعنا", 350],
-      ["نعنا یخ", 350],
-      ["لیمو نعنا", 350],
-      ["دژاوو", 350],
-      ["شب های مسکو", 350],
-      ["آدامس دارچین", 350],
-      ["لاو", 350],
-      ["هندونه یخ", 350],
-      ["بلوبری", 350],
-      ["دوسیب آلبالو", 350]
-    ]
-  },
-  /* ---------- SHAKE ---------- */
-  shake: {
-    title: "شیک",
-    en: "SHAKE",
-    items: [
-      ["کره گردو", 380],
-      ["شکلات", 350],
-      ["اوریو", 380],
-      ["لوتوس", 380],
-      ["نوتلا", 380],
-      ["توت فرنگی", 350],
-      ["وانیل", 350],
-      ["بادام زمینی", 380],
-      ["پسته", 428]
-    ]
-  },
-  /* ---------- BREAKFAST ---------- */
-  breakfast: {
-    title: "صبحانه",
-    en: "BREAKFAST",
-    items: [
-      ["نیمرو", 188],
-      ["سوسیس تخم مرغ", 237],
-      ["سینی ایرانی", 470],
-      ["املت", 237],
-      ["تست سوسیس تخم مرغ", 285],
-      ["املت فرانسوی", 370],
-      ["تست کره بادام زمینی", 270],
-      ["املت قارچ پنیر", 288],
-      ["اوتمیل", 295]
-    ]
-  },
-  /* ---------- COLD BAR ---------- */
-  cold: {
-    title: "بار سرد",
-    en: "COLD BAR",
-    items: [
-      ["بلک دایموند", 297],
-      ["فارست", 287],
-      ["رد وایو", 278],
-      ["موهیتو", 248],
-      ["لیموناد", 228],
-      ["ولوت پینک", 294],
-      ["میدنایت بلو", 287],
-      ["رد موهیتو", 378]
-    ]
-  },
-  /* ---------- HOT BAR ---------- */
   hot: {
     title: "بار گرم",
     en: "HOT BAR",
@@ -89,18 +22,20 @@ const menu = {
       ["کارامل ماکیاتو", 248]
     ]
   },
-  /* ---------- ICED TEA ---------- */
-  iced: {
-    title: "آیس تی",
-    en: "ICED TEA",
+  cold: {
+    title: "بار سرد",
+    en: "COLD BAR",
     items: [
-      ["آیس ماچا", 290],
-      ["آیس اوبه", 330],
-      ["آیس اسپرولینا", 327],
-      ["آیس تارو", 338]
+      ["بلک دایموند", 297],
+      ["فارست", 287],
+      ["رد وایو", 278],
+      ["موهیتو", 248],
+      ["لیموناد", 228],
+      ["ولوت پینک", 294],
+      ["میدنایت بلو", 287],
+      ["رد موهیتو", 378]
     ]
   },
-  /* ---------- ESPRESSO ---------- */
   espresso: {
     title: "بر پایه اسپرسو",
     en: "ESPRESSO BASED",
@@ -109,8 +44,8 @@ const menu = {
       ["اسپرسو دبل 70/30", 130],
       ["اسپرسو سینگل 50/50", 90],
       ["اسپرسو دبل 50/50", 130],
-      ["اسپرسو سینگل 100٪ عربیکا", 110],
-      ["اسپرسو دبل 100٪ عربیکا", 150],
+      ["اسپرسو سینگل ۱۰۰٪ عربیکا", 110],
+      ["اسپرسو دبل ۱۰۰٪ عربیکا", 150],
       ["کوکونات", 268],
       ["آفوگاتو", 248],
       ["لته", 225],
@@ -122,15 +57,48 @@ const menu = {
       ["کن پانا", 155]
     ]
   },
-   /* ---------- SANDWICHES ---------- */
-sandwich: {
-  title: "ساندویچ ها",
-  en: "SANDWICHES",
-  items: []
-},
-  /* ---------- CAKE ---------- */
+  iced: {
+    title: "آیس تی",
+    en: "ICED TEA",
+    items: [
+      ["آیس ماچا", 290],
+      ["آیس اوبه", 330],
+      ["آیس اسپرولینا", 327],
+      ["آیس تارو", 338]
+    ]
+  },
+  shake: {
+    title: "شیک",
+    en: "SHAKE",
+    items: [
+      ["کره گردو", 380],
+      ["شکلات", 350],
+      ["اوریو", 380],
+      ["لوتوس", 380],
+      ["نوتلا", 380],
+      ["توت فرنگی", 350],
+      ["وانیل", 350],
+      ["بادام زمینی", 380],
+      ["پسته", 428]
+    ]
+  },
+  breakfast: {
+    title: "صبحانه",
+    en: "BREAKFAST",
+    items: [
+      ["نیمرو", 188],
+      ["سوسیس تخم مرغ", 237],
+      ["سینی ایرانی", 470],
+      ["املت", 237],
+      ["تست سوسیس تخم مرغ", 285],
+      ["املت فرانسوی", 370],
+      ["تست کره بادام زمینی", 270],
+      ["املت قارچ پنیر", 288],
+      ["اوتمیل", 295]
+    ]
+  },
   cake: {
-    title: "کیک ها",
+    title: "کیک‌ها",
     en: "CAKES & DESSERTS",
     items: [
       ["کروسان بستنی", null],
@@ -142,30 +110,29 @@ sandwich: {
       ["تیرامیسو", null]
     ]
   },
-  /* ---------- DINNER ---------- */
-  const categoryLabels = [
-  ["hot", "بار گرم"],
-  ["cold", "بار سرد"],
-  ["espresso", "بر پایه اسپرسو"],
-  ["iced", "آیس تی"],
-  ["shake", "شیک"],
-  ["breakfast", "صبحانه"],
-  ["cake", "کیک ها"],
-  ["sandwich", "ساندویچ ها"],
-  ["hookah", "قلیان ها"]
-];
-/* ================= CATEGORY BUTTONS ================= */
-const categoryLabels = [
-  ["hot", "بار گرم"],
-  ["cold", "بار سرد"],
-  ["espresso", "بر پایه اسپرسو"],
-  ["iced", "آیس تی"],
-  ["shake", "شیک"],
-  ["hookah", "قلیان ها"],
-  ["breakfast", "صبحانه"],
-  ["cake", "کیک ها"],
-  ["dinner", "شام"]
-];
+  sandwich: {
+    title: "ساندویچ‌ها",
+    en: "SANDWICHES",
+    items: []
+  },
+  hookah: {
+    title: "قلیان‌ها",
+    en: "HOOKAH",
+    items: [
+      ["آدامس نعنا", 350],
+      ["هندونه نعنا", 350],
+      ["نعنا یخ", 350],
+      ["لیمو نعنا", 350],
+      ["دژاوو", 350],
+      ["شب های مسکو", 350],
+      ["آدامس دارچین", 350],
+      ["لاو", 350],
+      ["هندونه یخ", 350],
+      ["بلوبری", 350],
+      ["دوسیب آلبالو", 350]
+    ]
+  }
+};
 
 /* ================= HTML ELEMENTS ================= */
 const categories = document.getElementById("categories");
@@ -174,9 +141,8 @@ const categoryTitle = document.getElementById("categoryTitle");
 const categoryEnglish = document.getElementById("categoryEnglish");
 
 /* ================= PRICE ================= */
-
 function formatPrice(value) {
-  if (value === null) {
+  if (value === null || value === undefined) {
     return `<span class="price missing">قیمت اعلام نشده</span>`;
   }
   return `<span class="price">${value.toLocaleString("fa-IR")}٬۰۰۰ تومان</span>`;
@@ -185,14 +151,8 @@ function formatPrice(value) {
 /* ================= CATEGORIES ================= */
 function renderCategories(active) {
   categories.querySelectorAll(".menu-category").forEach(button => {
-    button.classList.toggle(
-      "active",
-      button.dataset.category === active
-    );
-
-    button.onclick = () => {
-      renderMenu(button.dataset.category);
-    };
+    button.classList.toggle("active", button.dataset.category === active);
+    button.onclick = () => renderMenu(button.dataset.category);
   });
 }
 
@@ -203,17 +163,17 @@ function renderMenu(key) {
 
   categoryTitle.textContent = group.title;
   categoryEnglish.textContent = group.en;
-
   renderCategories(key);
 
   products.innerHTML = group.items
     .map(([name, price]) => {
-      return `<article class="product">
-        <div class="product-info">
-          <p class="product-name">${name}</p>
-        </div>
-        ${formatPrice(price)}
-      </article>`;
+      return `
+        <article class="product">
+          <div class="product-info">
+            <p class="product-name">${name}</p>
+          </div>
+          ${formatPrice(price)}
+        </article>`;
     })
     .join("");
 }
