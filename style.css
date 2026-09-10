@@ -880,3 +880,105 @@ footer a {
         left: 66%;
     }
 }
+/* ================= IMPROVEMENTS ================= */
+
+/* برجسته کردن دسته فعال */
+.menu-category.active {
+    border-color: rgba(180, 235, 125, 0.95);
+    background: rgba(18, 45, 30, 0.95);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(159, 223, 114, 0.15),
+        inset 0 0 40px rgba(159, 223, 114, 0.04);
+    transform: translateY(-4px) scale(1.015);
+}
+
+/* انیمیشن محصولات */
+.products {
+    animation: productsFade 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes productsFade {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* بهبود ظاهر محصولات */
+.product {
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.product:hover {
+    background: rgba(159, 223, 114, 0.08);
+}
+
+/* هدر محصولات چسبنده */
+.menu-head {
+    position: sticky;
+    top: 72px;
+    z-index: 20;
+    background: linear-gradient(145deg, rgba(14, 37, 25, 0.97), rgba(4, 13, 8, 0.98));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* دکمه بازگشت به دسته‌بندی‌ها */
+.back-to-categories {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 50px;
+    background: rgba(12, 31, 21, 0.92);
+    border: 1px solid rgba(159, 223, 114, 0.45);
+    color: #dcefa0;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    transition: all 0.25s ease;
+}
+
+.back-to-categories:hover {
+    background: rgba(20, 50, 32, 0.95);
+    border-color: rgba(180, 235, 125, 0.8);
+    transform: translateX(-50%) translateY(-3px);
+}
+
+.back-to-categories.visible {
+    display: flex;
+}
+
+/* پیام خالی بودن */
+.empty-products {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+/* موبایل */
+@media (max-width: 720px) {
+    .menu-head {
+        top: 62px;
+    }
+    
+    .back-to-categories {
+        bottom: 20px;
+        padding: 11px 18px;
+        font-size: 13px;
+    }
+}
