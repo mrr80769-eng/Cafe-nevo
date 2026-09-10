@@ -1204,8 +1204,41 @@ footer a {
     opacity: 0.6;
 }
 
-.category {
-    ...
-    padding: 10px 17px;
-    border-radius: 999px;
+/* =========================================
+   CAFE NEVO - MENU LOGO FIX
+   ========================================= */
+
+#menu .menu-page-head .menu-logo {
+    width: 55px !important;
+    height: 55px !important;
+    min-width: 55px !important;
+    min-height: 55px !important;
+    max-width: 55px !important;
+    max-height: 55px !important;
+
+    margin: 0 auto 10px !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    overflow: hidden !important;
+}
+
+#menu .menu-page-head .menu-logo img {
+    width: 55px !important;
+    height: 55px !important;
+
+    min-width: 55px !important;
+    min-height: 55px !important;
+    max-width: 55px !important;
+    max-height: 55px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: block !important;
+
+    object-fit: contain !important;
 }
