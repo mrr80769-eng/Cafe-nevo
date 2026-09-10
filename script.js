@@ -139,6 +139,7 @@ const categories = document.getElementById("categories");
 const products = document.getElementById("products");
 const categoryTitle = document.getElementById("categoryTitle");
 const categoryEnglish = document.getElementById("categoryEnglish");
+const backBtn = document.getElementById("backToCategories");
 
 /* ================= PRICE ================= */
 function formatPrice(value) {
@@ -165,30 +166,62 @@ function renderMenu(key) {
   categoryEnglish.textContent = group.en;
   renderCategories(key);
 
-  products.innerHTML = group.items
-    .map(([name, price]) => {
-      return `
-        <article class="product">
-          <div class="product-info">
-            <p class="product-name">${name}</p>
-          </div>
-          ${formatPrice(price)}
-        </article>`;
-    })
-    .join("");
+  // رندر محصولات یا پیام خالی
+  if (group.items.length === 0) {
+    products.innerHTML = `
+      <div class="empty-products">
+        به زودی آیتم‌های این بخش اضافه می‌شوند ✨
+      </div>`;
+  } else {
+    products.innerHTML = group.items
+      .map(([name, price]) => {
+        return `
+          <article class="product">
+            <div class="product-info">
+              <p class="product-name">${name}</p>
+            </div>
+            ${formatPrice(price)}
+          </article>`;
+      })
+      .join("");
+  }
+
+  // ریست انیمیشن
+  products.style.animation = "none";
+  products.offsetHeight; // force reflow
+  products.style.animation = null;
 
   // اسکرول نرم به بخش محصولات
   const productsSection = document.getElementById("menuProducts");
   if (productsSection) {
-    // کمی فاصله از بالا به خاطر هدر ثابت
     const offset = 90;
     const top = productsSection.getBoundingClientRect().top + window.pageYOffset - offset;
-    
     window.scrollTo({
       top: top,
       behavior: "smooth"
     });
   }
+
+  // نمایش دکمه بازگشت
+  if (backBtn) {
+    backBtn.classList.add("visible");
+  }
 }
+
+/* ================= BACK BUTTON ================= */
+if (backBtn) {
+  backBtn.addEventListener("click", () => {
+    const categoriesSection = document.getElementById("categories");
+    if (categoriesSection) {
+      const offset = 90;
+      const top = categoriesSection.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({
+        top: top,
+        behavior: "smooth"
+      });
+    }
+  });
+}
+
 /* ================= START ================= */
 renderMenu("hot");
