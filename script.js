@@ -176,7 +176,19 @@ function renderMenu(key) {
         </article>`;
     })
     .join("");
-}
 
+  // اسکرول نرم به بخش محصولات
+  const productsSection = document.getElementById("menuProducts");
+  if (productsSection) {
+    // کمی فاصله از بالا به خاطر هدر ثابت
+    const offset = 90;
+    const top = productsSection.getBoundingClientRect().top + window.pageYOffset - offset;
+    
+    window.scrollTo({
+      top: top,
+      behavior: "smooth"
+    });
+  }
+}
 /* ================= START ================= */
 renderMenu("hot");
