@@ -186,7 +186,7 @@ function renderMenu(key) {
       .join("");
   }
 
-  // ریست انیمیشن
+  // ریست انیمیشن stagger
   products.style.animation = "none";
   products.offsetHeight; // force reflow
   products.style.animation = null;
