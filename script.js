@@ -122,6 +122,12 @@ const menu = {
       ["کن پانا", 155]
     ]
   },
+   /* ---------- SANDWICHES ---------- */
+sandwich: {
+  title: "ساندویچ ها",
+  en: "SANDWICHES",
+  items: []
+},
   /* ---------- CAKE ---------- */
   cake: {
     title: "کیک ها",
