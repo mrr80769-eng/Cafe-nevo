@@ -157,15 +157,6 @@ function renderCategories(active) {
   });
 }
 
-/* ================= RENDER MENU ================= */
-function renderMenu(key) {
-  const group = menu[key];
-  if (!group) return;
-
-  categoryTitle.textContent = group.title;
-  categoryEnglish.textContent = group.en;
-  renderCategories(key);
-
   // رندر محصولات یا پیام خالی
   if (group.items.length === 0) {
     products.innerHTML = `
@@ -177,6 +168,9 @@ function renderMenu(key) {
       .map(([name, price]) => {
         return `
           <article class="product">
+            <div class="product-image">
+              <!-- بعداً عکس اینجا اضافه می‌شه -->
+            </div>
             <div class="product-info">
               <p class="product-name">${name}</p>
             </div>
@@ -185,7 +179,6 @@ function renderMenu(key) {
       })
       .join("");
   }
-
   // ریست انیمیشن stagger
   products.style.animation = "none";
   products.offsetHeight; // force reflow
