@@ -1235,3 +1235,137 @@ footer a {
         font-size: 13px;
     }
 }
+/* ================= LUXURY PRODUCT CARDS - FORCE ================= */
+
+.products {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+    padding: 20px !important;
+    border: none !important;
+}
+
+.product {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
+    padding: 16px 18px !important;
+    min-height: 88px !important;
+    border-radius: 18px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(159, 223, 114, 0.12) !important;
+    border-bottom: 1px solid rgba(159, 223, 114, 0.12) !important;
+    border-left: none !important;
+    overflow: hidden !important;
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.product:nth-child(odd) {
+    border-left: none !important;
+}
+
+/* جای عکس */
+.product-image {
+    width: 62px !important;
+    height: 62px !important;
+    flex-shrink: 0 !important;
+    border-radius: 14px !important;
+    background: linear-gradient(135deg, rgba(159, 223, 114, 0.12), rgba(93, 204, 140, 0.06)) !important;
+    border: 1px solid rgba(159, 223, 114, 0.18) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.product-image::after {
+    content: "✦" !important;
+    font-size: 18px !important;
+    color: rgba(159, 223, 114, 0.35) !important;
+}
+
+.product-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 14px !important;
+}
+
+/* اطلاعات */
+.product-info {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.product-name {
+    margin: 0 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #f3f7ed !important;
+    line-height: 1.3 !important;
+}
+
+/* قیمت */
+.price {
+    flex-shrink: 0 !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    color: #9fdf72 !important;
+    letter-spacing: -0.3px !important;
+    white-space: nowrap !important;
+}
+
+.price.missing {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #7a8f7c !important;
+}
+
+/* هاور */
+.product:hover {
+    background: rgba(159, 223, 114, 0.07) !important;
+    border-color: rgba(159, 223, 114, 0.35) !important;
+    transform: translateY(-4px) !important;
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(159, 223, 114, 0.08) !important;
+}
+
+.product:hover .product-image {
+    border-color: rgba(159, 223, 114, 0.4) !important;
+    box-shadow: 0 0 15px rgba(159, 223, 114, 0.15) !important;
+}
+
+/* موبایل */
+@media (max-width: 720px) {
+    .products {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        padding: 16px !important;
+    }
+
+    .product {
+        padding: 14px 16px !important;
+        min-height: 80px !important;
+    }
+
+    .product-image {
+        width: 54px !important;
+        height: 54px !important;
+        border-radius: 12px !important;
+    }
+
+    .product-name {
+        font-size: 14px !important;
+    }
+
+    .price {
+        font-size: 13px !important;
+    }
+}
