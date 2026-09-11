@@ -1,113 +1,65 @@
-/* =====================================================
-   CAFE NEVO DIGITAL MENU
-   ===================================================== */
-
 const menu = {
   hot: {
     title: "بار گرم",
     en: "HOT BAR",
     items: [
-      ["ماچا", 280],
-      ["تارو", 328],
-      ["اسپرولینا", 317],
-      ["اوبه", 320],
-      ["کرک", 197],
-      ["ماسالا", 228],
-      ["هات چاکلت", 222],
-      ["دمنوش آفتاب", 195],
-      ["دمنوش آفرینش", 238],
-      ["دمنوش ویژه نوو", 148],
-      ["چایی (دو نفره)", 138],
-      ["شیر کاکائو با خامه", 248],
-      ["کارامل ماکیاتو", 248]
+      ["ماچا", 280], ["تارو", 328], ["اسپرولینا", 317], ["اوبه", 320],
+      ["کرک", 197], ["ماسالا", 228], ["هات چاکلت", 222], ["دمنوش آفتاب", 195],
+      ["دمنوش آفرینش", 238], ["دمنوش ویژه نوو", 148], ["چایی (دو نفره)", 138],
+      ["شیر کاکائو با خامه", 248], ["کارامل ماکیاتو", 248]
     ]
   },
   cold: {
     title: "بار سرد",
     en: "COLD BAR",
     items: [
-      ["بلک دایموند", 297],
-      ["فارست", 287],
-      ["رد وایو", 278],
-      ["موهیتو", 248],
-      ["لیموناد", 228],
-      ["ولوت پینک", 294],
-      ["میدنایت بلو", 287],
-      ["رد موهیتو", 378]
+      ["بلک دایموند", 297], ["فارست", 287], ["رد وایو", 278], ["موهیتو", 248],
+      ["لیموناد", 228], ["ولوت پینک", 294], ["میدنایت بلو", 287], ["رد موهیتو", 378]
     ]
   },
   espresso: {
     title: "بر پایه اسپرسو",
     en: "ESPRESSO BASED",
     items: [
-      ["اسپرسو سینگل 70/30", 90],
-      ["اسپرسو دبل 70/30", 130],
-      ["اسپرسو سینگل 50/50", 90],
-      ["اسپرسو دبل 50/50", 130],
-      ["اسپرسو سینگل ۱۰۰٪ عربیکا", 110],
-      ["اسپرسو دبل ۱۰۰٪ عربیکا", 150],
-      ["کوکونات", 268],
-      ["آفوگاتو", 248],
-      ["لته", 225],
-      ["موکا", 238],
-      ["آیس موکا", 248],
-      ["آیس لته", 235],
-      ["کاپوچینو", 226],
-      ["کورتادو", 148],
-      ["کن پانا", 155]
+      ["اسپرسو سینگل 70/30", 90], ["اسپرسو دبل 70/30", 130],
+      ["اسپرسو سینگل 50/50", 90], ["اسپرسو دبل 50/50", 130],
+      ["اسپرسو سینگل ۱۰۰٪ عربیکا", 110], ["اسپرسو دبل ۱۰۰٪ عربیکا", 150],
+      ["کوکونات", 268], ["آفوگاتو", 248], ["لته", 225], ["موکا", 238],
+      ["آیس موکا", 248], ["آیس لته", 235], ["کاپوچینو", 226],
+      ["کورتادو", 148], ["کن پانا", 155]
     ]
   },
   iced: {
     title: "آیس تی",
     en: "ICED TEA",
     items: [
-      ["آیس ماچا", 290],
-      ["آیس اوبه", 330],
-      ["آیس اسپرولینا", 327],
-      ["آیس تارو", 338]
+      ["آیس ماچا", 290], ["آیس اوبه", 330], ["آیس اسپرولینا", 327], ["آیس تارو", 338]
     ]
   },
   shake: {
     title: "شیک",
     en: "SHAKE",
     items: [
-      ["کره گردو", 380],
-      ["شکلات", 350],
-      ["اوریو", 380],
-      ["لوتوس", 380],
-      ["نوتلا", 380],
-      ["توت فرنگی", 350],
-      ["وانیل", 350],
-      ["بادام زمینی", 380],
-      ["پسته", 428]
+      ["کره گردو", 380], ["شکلات", 350], ["اوریو", 380], ["لوتوس", 380],
+      ["نوتلا", 380], ["توت فرنگی", 350], ["وانیل", 350], ["بادام زمینی", 380], ["پسته", 428]
     ]
   },
   breakfast: {
     title: "صبحانه",
     en: "BREAKFAST",
     items: [
-      ["نیمرو", 188],
-      ["سوسیس تخم مرغ", 237],
-      ["سینی ایرانی", 470],
-      ["املت", 237],
-      ["تست سوسیس تخم مرغ", 285],
-      ["املت فرانسوی", 370],
-      ["تست کره بادام زمینی", 270],
-      ["املت قارچ پنیر", 288],
-      ["اوتمیل", 295]
+      ["نیمرو", 188], ["سوسیس تخم مرغ", 237], ["سینی ایرانی", 470], ["املت", 237],
+      ["تست سوسیس تخم مرغ", 285], ["املت فرانسوی", 370], ["تست کره بادام زمینی", 270],
+      ["املت قارچ پنیر", 288], ["اوتمیل", 295]
     ]
   },
   cake: {
     title: "کیک‌ها",
     en: "CAKES & DESSERTS",
     items: [
-      ["کروسان بستنی", null],
-      ["کوکی", null],
-      ["کیک سه شیر", null],
-      ["کیک خیس", null],
-      ["کیک سن سباستین", null],
-      ["کیک پای سیب / آلبالو", null],
-      ["تیرامیسو", null]
+      ["کروسان بستنی", null], ["کوکی", null], ["کیک سه شیر", null],
+      ["کیک خیس", null], ["کیک سن سباستین", null],
+      ["کیک پای سیب / آلبالو", null], ["تیرامیسو", null]
     ]
   },
   sandwich: {
@@ -119,29 +71,19 @@ const menu = {
     title: "قلیان‌ها",
     en: "HOOKAH",
     items: [
-      ["آدامس نعنا", 350],
-      ["هندونه نعنا", 350],
-      ["نعنا یخ", 350],
-      ["لیمو نعنا", 350],
-      ["دژاوو", 350],
-      ["شب های مسکو", 350],
-      ["آدامس دارچین", 350],
-      ["لاو", 350],
-      ["هندونه یخ", 350],
-      ["بلوبری", 350],
-      ["دوسیب آلبالو", 350]
+      ["آدامس نعنا", 350], ["هندونه نعنا", 350], ["نعنا یخ", 350], ["لیمو نعنا", 350],
+      ["دژاوو", 350], ["شب های مسکو", 350], ["آدامس دارچین", 350], ["لاو", 350],
+      ["هندونه یخ", 350], ["بلوبری", 350], ["دوسیب آلبالو", 350]
     ]
   }
 };
 
-/* ================= HTML ELEMENTS ================= */
 const categories = document.getElementById("categories");
 const products = document.getElementById("products");
 const categoryTitle = document.getElementById("categoryTitle");
 const categoryEnglish = document.getElementById("categoryEnglish");
 const backBtn = document.getElementById("backToCategories");
 
-/* ================= PRICE ================= */
 function formatPrice(value) {
   if (value === null || value === undefined) {
     return `<span class="price missing">قیمت اعلام نشده</span>`;
@@ -149,72 +91,53 @@ function formatPrice(value) {
   return `<span class="price">${value.toLocaleString("fa-IR")}٬۰۰۰ تومان</span>`;
 }
 
-/* ================= CATEGORIES ================= */
 function renderCategories(active) {
-  categories.querySelectorAll(".menu-category").forEach(button => {
-    button.classList.toggle("active", button.dataset.category === active);
-    button.onclick = () => renderMenu(button.dataset.category);
+  categories.querySelectorAll(".menu-category").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.category === active);
+    btn.onclick = () => renderMenu(btn.dataset.category);
   });
 }
 
-  // رندر محصولات یا پیام خالی
+function renderMenu(key) {
+  const group = menu[key];
+  if (!group) return;
+
+  categoryTitle.textContent = group.title;
+  categoryEnglish.textContent = group.en;
+  renderCategories(key);
+
   if (group.items.length === 0) {
-    products.innerHTML = `
-      <div class="empty-products">
-        به زودی آیتم‌های این بخش اضافه می‌شوند ✨
-      </div>`;
+    products.innerHTML = `<div class="empty-products">به زودی آیتم‌های این بخش اضافه می‌شوند ✨</div>`;
   } else {
-    products.innerHTML = group.items
-      .map(([name, price]) => {
-        return `
-          <article class="product">
-            <div class="product-image">
-              <!-- بعداً عکس اینجا اضافه می‌شه -->
-            </div>
-            <div class="product-info">
-              <p class="product-name">${name}</p>
-            </div>
-            ${formatPrice(price)}
-          </article>`;
-      })
-      .join("");
-  }
-  // ریست انیمیشن stagger
-  products.style.animation = "none";
-  products.offsetHeight; // force reflow
-  products.style.animation = null;
-
-  // اسکرول نرم به بخش محصولات
-  const productsSection = document.getElementById("menuProducts");
-  if (productsSection) {
-    const offset = 90;
-    const top = productsSection.getBoundingClientRect().top + window.pageYOffset - offset;
-    window.scrollTo({
-      top: top,
-      behavior: "smooth"
-    });
+    products.innerHTML = group.items.map(([name, price]) => `
+      <article class="product">
+        <div class="product-image"></div>
+        <div class="product-info">
+          <p class="product-name">${name}</p>
+        </div>
+        ${formatPrice(price)}
+      </article>
+    `).join("");
   }
 
-  // نمایش دکمه بازگشت
-  if (backBtn) {
-    backBtn.classList.add("visible");
+  // اسکرول
+  const section = document.getElementById("menuProducts");
+  if (section) {
+    const top = section.getBoundingClientRect().top + window.pageYOffset - 90;
+    window.scrollTo({ top, behavior: "smooth" });
   }
+
+  if (backBtn) backBtn.classList.add("visible");
 }
 
-/* ================= BACK BUTTON ================= */
 if (backBtn) {
-  backBtn.addEventListener("click", () => {
-    const categoriesSection = document.getElementById("categories");
-    if (categoriesSection) {
-      const offset = 90;
-      const top = categoriesSection.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({
-        top: top,
-        behavior: "smooth"
-      });
+  backBtn.onclick = () => {
+    const cat = document.getElementById("categories");
+    if (cat) {
+      const top = cat.getBoundingClientRect().top + window.pageYOffset - 90;
+      window.scrollTo({ top, behavior: "smooth" });
     }
-  });
+  };
 }
 
-/* ================= START ================= */
 renderMenu("hot");
