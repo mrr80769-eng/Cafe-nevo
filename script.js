@@ -161,16 +161,16 @@ function renderMenu(key) {
   if (group.items.length === 0) {
     products.innerHTML = `<div class="empty-products">به زودی آیتم‌های این بخش اضافه می‌شوند ✨</div>`;
   } else {
-    products.innerHTML = group.items.map(item => `
-      <article class="product">
-        <div class="product-image" ${item.img ? `style="background-image: url('${item.img}')"` : ""}></div>
-        <div class="product-info">
-          <p class="product-name">${item.name}</p>
-        </div>
-        ${formatPrice(item.price)}
-      </article>
-    `).join("");
-  }
+   products.innerHTML = group.items.map(item => `
+  <article class="product">
+    <div class="product-image" ${item.img ? `style="background-image: url('${item.img}')"` : ""}></div>
+    <div class="product-info">
+      <p class="product-name">${item.name}</p>
+      ${formatPrice(item.price)}
+    </div>
+  </article>
+`).join("");
+    ]
 
   const section = document.getElementById("menuProducts");
   if (section) {
