@@ -3,19 +3,19 @@ const menu = {
     title: "بار گرم",
     en: "HOT BAR",
     items: [
-      { name: "ماچا", price: 280, img: "images/matcha.jpg" },
-      { name: "تارو", price: 328, img: "images/taro.jpg" },
-      { name: "اسپرولینا", price: 317, img: "images/spirulina.jpg" },
-      { name: "اوبه", price: 320, img: "images/ube.jpg" },
-      { name: "کرک", price: 197, img: "images/karak.jpg" },
-      { name: "ماسالا", price: 228, img: "images/masala.jpg" },
-      { name: "هات چاکلت", price: 222, img: "images/hot-chocolate.jpg" },
-      { name: "دمنوش آفتاب", price: 195, img: "images/aftab-tea.jpg" },
-      { name: "دمنوش آفرینش", price: 238, img: "images/afarinesh-tea.jpg" },
-      { name: "دمنوش ویژه نوو", price: 148, img: "images/nevo-tea.jpg" },
-      { name: "چایی (دو نفره)", price: 138, img: "images/tea.jpg" },
-      { name: "شیر کاکائو با خامه", price: 248, img: "images/cocoa-cream.jpg" },
-      { name: "کارامل ماکیاتو", price: 248, img: "images/caramel-macchiato.jpg" }
+      { name: "ماچا", price: 280, img: "matcha.jpg" },
+      { name: "تارو", price: 328, img: "taro.jpg" },
+      { name: "اسپرولینا", price: 317, img: "spirulina.jpg" },
+      { name: "اوبه", price: 320, img: "ube.jpg" },
+      { name: "کرک", price: 197, img: "karak.jpg" },
+      { name: "ماسالا", price: 228, img: "masala.jpg" },
+      { name: "هات چاکلت", price: 222, img: "hot-chocolate.jpg" },
+      { name: "دمنوش آفتاب", price: 195, img: "aftab-tea.jpg" },
+      { name: "دمنوش آفرینش", price: 238, img: "afarinesh-tea.jpg" },
+      { name: "دمنوش ویژه نوو", price: 148, img: "nevo-tea.jpg" },
+      { name: "چایی (دو نفره)", price: 138, img: "tea.jpg" },
+      { name: "شیر کاکائو با خامه", price: 248, img: "cocoa-cream.jpg" },
+      { name: "کارامل ماکیاتو", price: 248, img: "caramel-macchiato.jpg" }
     ]
   },
   cold: {
