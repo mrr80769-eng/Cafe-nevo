@@ -211,21 +211,36 @@ img { max-width: 100%; height: auto; }
     transition: all .3s ease;
 }
 
+/* ===== Product Image - Professional Style ===== */
 .product-image {
     width: 64px;
     height: 64px;
     flex-shrink: 0;
     border-radius: 14px;
-    background: linear-gradient(135deg, rgba(159,223,114,.15), rgba(93,204,140,.07));
-    border: 1px solid rgba(159,223,114,.2);
+    background: linear-gradient(135deg, rgba(159, 223, 114, 0.15), rgba(93, 204, 140, 0.07));
+    border: 1px solid rgba(159, 223, 114, 0.25);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    color: rgba(159,223,114,.4);
+    color: rgba(159, 223, 114, 0.4);
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
-.product-image::before { content: "✦"; }
+/* فقط وقتی عکس نداشت ستاره نشون بده */
+.product-image:not([style*="background-image"])::before {
+    content: "✦";
+}
+
+.product:hover .product-image {
+    transform: scale(1.08);
+    border-color: rgba(159, 223, 114, 0.55);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
 
 .product-info {
     flex: 1;
@@ -297,7 +312,7 @@ footer {
     flex-wrap: wrap;
 }
 
-/* ===== FIX: لوگو فوتر (علت اصلی اسکرول افقی) ===== */
+/* ===== FIX: لوگو فوتر ===== */
 .footer-brand {
     display: flex;
     align-items: center;
@@ -392,8 +407,9 @@ footer {
     }
 
     .product-image {
-        width: 52px;
-        height: 52px;
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
     }
 
     .product-name {
