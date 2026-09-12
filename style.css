@@ -11,11 +11,13 @@
 }
 
 * { box-sizing: border-box; }
+
 html {
     scroll-behavior: smooth;
     max-width: 100%;
     overflow-x: hidden;
 }
+
 body {
     margin: 0;
     color: var(--white);
@@ -26,6 +28,7 @@ body {
     overflow-x: hidden;
     max-width: 100vw;
 }
+
 a { color: inherit; text-decoration: none; }
 button { font: inherit; border: none; background: none; cursor: pointer; }
 img { max-width: 100%; height: auto; }
@@ -43,6 +46,7 @@ img { max-width: 100%; height: auto; }
     padding: 0 clamp(20px, 5vw, 70px);
     background: linear-gradient(to bottom, rgba(3,8,5,.94), transparent);
 }
+
 .mini-brand { display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .18em; }
 .mini-brand img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); }
 .instagram-mini { font-size: 12px; color: var(--green); border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; }
@@ -54,12 +58,15 @@ img { max-width: 100%; height: auto; }
     background: linear-gradient(rgba(2,7,4,.54), rgba(2,7,4,.95)),
                 radial-gradient(circle at 50% 38%, rgba(159,223,114,.13), transparent 33%);
 }
+
 .hero-inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 100%; }
+
 .logo-frame {
     width: 160px; height: 160px; margin: 0 auto 24px; padding: 10px;
     border: 1px solid rgba(159,223,114,.34); border-radius: 50%;
     background: rgba(5,14,9,.72); box-shadow: 0 0 70px rgba(92,204,140,.12);
 }
+
 .logo-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .22em; color: var(--green); }
 .hero h1 { font-size: clamp(48px, 12vw, 92px); font-weight: 500; line-height: 1; margin: 10px 0; }
@@ -74,13 +81,16 @@ img { max-width: 100%; height: auto; }
     box-shadow: 0 25px 70px rgba(0,0,0,.38);
     transition: transform .28s ease;
 }
+
 .hero-btn-label { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
 .hero-btn-label small { font-size: 8px; font-weight: 600; letter-spacing: 3px; color: rgba(159,223,114,.75); }
 .hero-btn-label strong { font-size: 15px; font-weight: 800; color: #f3f7ed; }
+
 .hero-btn-icon {
     width: 52px; height: 52px; display: flex; align-items: center; justify-content: center;
     border-radius: 18px; background: linear-gradient(145deg, #e2ed7b, #9fdf72 55%, #78c66c); color: #071109;
 }
+
 .hero-meta {
     position: absolute; bottom: 24px; left: 5vw; right: 5vw;
     display: flex; justify-content: space-between; color: #758878; font-size: 9px; letter-spacing: .16em;
@@ -92,16 +102,20 @@ img { max-width: 100%; height: auto; }
 .menu-page-head { text-align: center; margin-bottom: 28px; }
 .menu-logo { width: 55px; height: 55px; margin: 0 auto 10px; }
 .menu-logo img { width: 100%; height: 100%; object-fit: contain; }
+
 .menu-page-head h1 {
     margin: 0; font-family: Georgia, serif; font-size: 32px; font-weight: 400;
     letter-spacing: .12em; color: #dcefa0;
 }
+
 .menu-title-line { display: flex; align-items: center; justify-content: center; gap: 25px; margin: 5px auto 2px; }
 .menu-title-line span { width: 85px; height: 1px; background: rgba(159,223,114,.75); }
+
 .menu-title-line h2 {
     margin: 0; font-family: Georgia, serif; font-size: 31px; font-weight: 400;
     letter-spacing: .22em; color: #dcefa0;
 }
+
 .menu-page-head > p { margin: 0; color: rgba(243,247,237,.72); font-size: 14px; letter-spacing: .18em; }
 
 /* Categories */
@@ -116,24 +130,30 @@ img { max-width: 100%; height: auto; }
     background: rgba(12,31,21,.78); overflow: hidden; cursor: pointer;
     transition: all .3s ease;
 }
+
 .menu-category img {
     position: absolute; top: 0; right: 0; width: 40%; height: 100%;
     object-fit: cover; border-radius: 0 23px 23px 0;
 }
+
 .menu-category::after {
     content: ""; position: absolute; inset: 0;
     background: linear-gradient(90deg, rgba(3,13,7,1) 0%, rgba(3,13,7,.96) 28%, rgba(3,13,7,.72) 51%, rgba(3,13,7,.2) 76%, rgba(3,13,7,.05) 100%);
 }
+
 .category-icon {
     position: absolute; left: 48px; top: 50%; transform: translateY(-50%);
     z-index: 3; font-size: 32px; color: #d7eb8d;
 }
+
 .category-text {
     position: absolute; left: 130px; top: 50%; transform: translateY(-50%);
     z-index: 3; display: flex; flex-direction: column; gap: 4px;
 }
+
 .category-text strong { font-family: Georgia, serif; font-size: 24px; font-weight: 400; color: #f4f5ef; }
 .category-text span { font-size: 15px; color: rgba(243,247,237,.9); direction: rtl; }
+
 .category-arrow {
     position: absolute; left: 58%; top: 50%; transform: translateY(-50%);
     z-index: 3; font-size: 36px; color: #f2f4df;
@@ -144,6 +164,7 @@ img { max-width: 100%; height: auto; }
     border-color: rgba(180,235,125,.95);
     box-shadow: 0 14px 38px rgba(0,0,0,.3), 0 0 25px rgba(159,223,114,.1);
 }
+
 .menu-category.active {
     border-color: rgba(200,255,140,.9);
     background: rgba(16,42,28,.95);
@@ -157,12 +178,16 @@ img { max-width: 100%; height: auto; }
     background: linear-gradient(145deg, rgba(14,37,25,.84), rgba(4,13,8,.9));
     overflow: hidden;
 }
+
 .menu-head {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 22px 24px; border-bottom: 1px solid var(--line2);
-    position: sticky; top: 72px; z-index: 20;
-    background: linear-gradient(145deg, rgba(14,37,25,.97), rgba(4,13,8,.98));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--line2);
+    background: linear-gradient(145deg, rgba(14, 37, 25, 0.97), rgba(4, 13, 8, 0.98));
 }
+
 .panel-en { font-size: 9px; letter-spacing: .2em; color: var(--green); }
 .menu-head h3 { margin: 6px 0 0; font-size: 24px; font-weight: 500; }
 .leaf-word { font-size: 10px; letter-spacing: .3em; color: #718875; }
@@ -171,8 +196,9 @@ img { max-width: 100%; height: auto; }
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
-    padding: 28px 20px 22px; /* قبلاً 28px بود → الان ۱۰۰px */
+    padding: 28px 20px 22px;
 }
+
 .product {
     display: flex;
     align-items: center;
@@ -184,6 +210,7 @@ img { max-width: 100%; height: auto; }
     border: 1px solid rgba(159,223,114,.13);
     transition: all .3s ease;
 }
+
 .product-image {
     width: 64px;
     height: 64px;
@@ -197,12 +224,15 @@ img { max-width: 100%; height: auto; }
     font-size: 20px;
     color: rgba(159,223,114,.4);
 }
+
 .product-image::before { content: "✦"; }
+
 .product-info {
     flex: 1;
     min-width: 0;
-    padding-inline-end: 4px; /* فاصله از نشان‌دهنده */
+    padding-inline-end: 4px;
 }
+
 .product-name {
     margin: 0;
     font-size: 15px;
@@ -210,6 +240,7 @@ img { max-width: 100%; height: auto; }
     color: #f3f7ed;
     line-height: 1.35;
 }
+
 .price {
     flex-shrink: 0;
     font-size: 14px;
@@ -217,6 +248,7 @@ img { max-width: 100%; height: auto; }
     color: #9fdf72;
     white-space: nowrap;
 }
+
 .price.missing {
     font-size: 12px;
     font-weight: 500;
@@ -244,12 +276,14 @@ img { max-width: 100%; height: auto; }
     margin: auto;
     padding: 20px 20px 60px;
 }
+
 .info-card, .qr-card {
     border: 1px solid var(--line);
     border-radius: 30px;
     padding: 40px;
     background: linear-gradient(135deg, rgba(14,37,25,.86), rgba(4,13,8,.92));
 }
+
 footer {
     border-top: 1px solid var(--line2);
     padding: 30px 5vw;
@@ -270,6 +304,7 @@ footer {
     gap: 10px;
     flex-shrink: 0;
 }
+
 .footer-brand img {
     width: 28px;
     height: 28px;
@@ -277,6 +312,7 @@ footer {
     object-fit: cover;
     flex-shrink: 0;
 }
+
 .footer-location {
     flex: 1;
     text-align: center;
@@ -302,6 +338,7 @@ footer {
     cursor: pointer;
     box-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
+
 .back-to-categories.visible { display: flex; }
 
 .instagram-float {
@@ -322,6 +359,7 @@ footer {
     box-shadow: 0 10px 30px rgba(159,223,114,.35);
     transition: all .3s ease;
 }
+
 .instagram-float:hover {
     transform: translateY(-5px) scale(1.05);
 }
@@ -346,24 +384,27 @@ footer {
         gap: 12px;
         padding: 20px 16px 18px;
     }
+
     .product {
         min-height: 82px;
         padding: 14px 16px;
         gap: 12px;
     }
+
     .product-image {
         width: 52px;
         height: 52px;
     }
+
     .product-name {
         font-size: 14px;
     }
-    .menu-head { top: 62px; }
 
     .footer-brand img {
         width: 24px;
         height: 24px;
     }
+
     footer {
         padding: 24px 18px;
         gap: 12px;
@@ -375,5 +416,6 @@ footer {
         padding: 10px 14px;
         font-size: 13px;
     }
+
     .back-to-categories { bottom: 20px; }
 }
