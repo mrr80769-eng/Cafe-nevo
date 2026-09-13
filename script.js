@@ -27,7 +27,7 @@ const menu = {
       { name: "رد وایو", price: 278, img: "red-wave.jpg" },
       { name: "موهیتو", price: 248, img: "mojito.jpg" },
       { name: "لیموناد", price: 228, img: "lemonade.jpg" },
-      { name: "ولوت پینک", price: 294, img: "velvet-pink.jpg" },
+      { name: "ولوت پینک", price: 294, img: "velvet-pinki.jpg" },
       { name: "میدنایت بلو", price: 287, img: "midnight-blue.jpg" },
       { name: "رد موهیتو", price: 378, img: "red-mojito.jpg" }
     ]
