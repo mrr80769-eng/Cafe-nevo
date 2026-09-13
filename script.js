@@ -69,7 +69,7 @@ const menu = {
     items: [
       { name: "کره گردو", price: 380, img: "walnut-shake.jpg" },
       { name: "شکلات", price: 350, img: "chocolate-shake.jpg" },
-      { name: "اوریو", price: 380, img: "oreo-shake.jpg" },
+      { name: "اورئو", price: 380, img: "oreo-shake.jpg" },
       { name: "لوتوس", price: 380, img: "lotus-shake.jpg" },
       { name: "نوتلا", price: 380, img: "nutella-shake.jpg" },
       { name: "توت فرنگی", price: 350, img: "strawberry-shake.jpg" },
