@@ -203,16 +203,14 @@ if (backBtn) {
     }
   };
 }
+
 /* ========== سیستم درخواست سفارش ========== */
-
 let selectedTable = null;
-let hoverTimers = new Map();
 
-// ساخت دکمه‌های میز
 function buildTableGrid() {
   const grid = document.getElementById("tableGrid");
   if (!grid) return;
-  
+
   grid.innerHTML = "";
   for (let i = 1; i <= 12; i++) {
     const btn = document.createElement("button");
@@ -228,7 +226,7 @@ function selectTable(num, btn) {
   selectedTable = num;
   document.querySelectorAll(".table-btn").forEach(b => b.classList.remove("selected"));
   btn.classList.add("selected");
-  
+
   const submitBtn = document.getElementById("orderSubmitBtn");
   if (submitBtn) {
     submitBtn.disabled = false;
@@ -240,7 +238,7 @@ function openOrderModal() {
   document.querySelectorAll(".table-btn").forEach(b => b.classList.remove("selected"));
   const submitBtn = document.getElementById("orderSubmitBtn");
   if (submitBtn) submitBtn.disabled = true;
-  
+
   const modal = document.getElementById("orderModal");
   if (modal) modal.classList.add("active");
 }
@@ -285,15 +283,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (submitBtn) {
     submitBtn.onclick = () => {
       if (!selectedTable) return;
-      
-      // فعلاً فقط پیام موفقیت نشون می‌دیم
-      // بعداً اینجا به Firebase وصل می‌شه
+
       console.log("درخواست سفارش برای میز:", selectedTable);
-      
+
       closeOrderModal();
       showToast(selectedTable);
-      
-      // اینجا بعداً درخواست رو به سرور می‌فرستیم
     };
   }
 });
@@ -325,14 +319,20 @@ renderMenu = function(key) {
     tip.textContent = "می‌خوای سفارش بدی؟";
     card.appendChild(tip);
 
-    let timer = null;
+    // کلیک روی تولتیپ → باز کردن مودال
+    tip.addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      openOrderModal();
+      tip.classList.remove("visible");
+    });
 
+    let timer = null;
     const showTip = () => {
       timer = setTimeout(() => {
         tip.classList.add("visible");
-      }, 2500); // بعد از ۲.۵ ثانیه
+      }, 2500);
     };
-
     const hideTip = () => {
       clearTimeout(timer);
       tip.classList.remove("visible");
@@ -341,7 +341,7 @@ renderMenu = function(key) {
     card.addEventListener("mouseenter", showTip);
     card.addEventListener("mouseleave", hideTip);
 
-    // برای موبایل (لمس طولانی)
+    // برای موبایل
     card.addEventListener("touchstart", showTip, { passive: true });
     card.addEventListener("touchend", hideTip);
     card.addEventListener("touchcancel", hideTip);
