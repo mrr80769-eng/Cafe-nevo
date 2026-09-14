@@ -299,7 +299,7 @@ renderMenu = function(key) {
   if (!productsEl.querySelector(".category-order-btn")) {
     const orderBtn = document.createElement("button");
     orderBtn.className = "category-order-btn";
-    orderBtn.innerHTML = `<span>🔔</span> درخواست سفارش`;
+    orderBtn.innerHTML = `<span>+</span> درخواست سفارش`;
     orderBtn.onclick = openOrderModal;
     productsEl.appendChild(orderBtn);
   }
