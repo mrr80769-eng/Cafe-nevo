@@ -40,7 +40,7 @@ const menu = {
       { name: "اسپرسو دبل 70/30", price: 130, img: "espresso-double70.jpg" },
       { name: "اسپرسو سینگل 50/50", price: 90, img: "espresso-single50.jpg" },
       { name: "اسپرسو دبل 50/50", price: 130, img: "espresso-double50.jpg" },
-      { name: "اسپرسو سینگل ۱۰۰٪ عربیکا", price: 110, img: "espresso-arabica100.jpg" },
+      { name: "اسپرسو سینگل ۱۰۰٪ عربیکا", price: 110, img: "espresso-arabica100S.jpg" },
       { name: "اسپرسو دبل ۱۰۰٪ عربیکا", price: 150, img: "espresso-arabica100.jpg" },
       { name: "کوکونات", price: 268, img: "coconut.jpg" },
       { name: "آفوگاتو", price: 248, img: "affogato.jpg" },
