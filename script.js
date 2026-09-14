@@ -160,11 +160,9 @@ function renderCategories(active) {
 function renderMenu(key) {
   const group = menu[key];
   if (!group) return;
-
   categoryTitle.textContent = group.title;
   categoryEnglish.textContent = group.en;
   renderCategories(key);
-
   if (group.items.length === 0) {
     products.innerHTML = `<div class="empty-products">به زودی آیتم‌های این بخش اضافه می‌شوند ✨</div>`;
   } else {
@@ -177,20 +175,17 @@ function renderMenu(key) {
         </div>
       </article>
     `).join("");
-
     // انیمیشن ورود یکی‌یکی
     const cards = products.querySelectorAll(".product");
     cards.forEach((card, i) => {
       setTimeout(() => card.classList.add("visible"), 40 + i * 55);
     });
   }
-
   const section = document.getElementById("menuProducts");
   if (section) {
     const top = section.getBoundingClientRect().top + window.pageYOffset - 90;
     window.scrollTo({ top, behavior: "smooth" });
   }
-
   if (backBtn) backBtn.classList.add("visible");
 }
 
@@ -255,6 +250,25 @@ function showToast(tableNum) {
   }
 }
 
+// تابع ارسال درخواست به Cloudflare Worker
+async function sendWaiterRequest(table) {
+  try {
+    const response = await fetch("https://cafe-nevo-order.arad62892.workers.dev/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ table: table })
+    });
+
+    const result = await response.json();
+    return result.ok === true;
+  } catch (error) {
+    console.error("خطا در ارسال درخواست:", error);
+    return false;
+  }
+}
+
 // اتصال دکمه‌ها
 document.addEventListener("DOMContentLoaded", () => {
   buildTableGrid();
@@ -278,11 +292,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // دکمه ثبت درخواست
   const submitBtn = document.getElementById("orderSubmitBtn");
   if (submitBtn) {
-    submitBtn.onclick = () => {
+    submitBtn.onclick = async () => {
       if (!selectedTable) return;
-      console.log("درخواست سفارش برای میز:", selectedTable);
-      closeOrderModal();
-      showToast(selectedTable);
+
+      // غیرفعال کردن دکمه موقع ارسال
+      submitBtn.disabled = true;
+      submitBtn.textContent = "در حال ارسال...";
+
+      const success = await sendWaiterRequest(selectedTable);
+
+      if (success) {
+        closeOrderModal();
+        showToast(selectedTable);
+      } else {
+        alert("خطا در ارسال درخواست. لطفاً دوباره تلاش کنید.");
+      }
+
+      // برگردوندن دکمه به حالت اولیه
+      submitBtn.disabled = false;
+      submitBtn.textContent = "ثبت درخواست";
     };
   }
 });
@@ -291,7 +319,6 @@ document.addEventListener("DOMContentLoaded", () => {
 const originalRenderMenu = renderMenu;
 renderMenu = function(key) {
   originalRenderMenu(key);
-
   const productsEl = document.getElementById("products");
   if (!productsEl) return;
 
@@ -331,12 +358,11 @@ renderMenu = function(key) {
       clearTimeout(hideTimer);
       showTimer = setTimeout(() => {
         tip.classList.add("visible");
-      }, 2200); // حدود ۲.۲ ثانیه نگه داشتن
+      }, 2200);
     };
 
     const hideTip = () => {
       clearTimeout(showTimer);
-      // روی موبایل کمی بیشتر نگه می‌داریم تا بشه روش زد
       hideTimer = setTimeout(() => {
         tip.classList.remove("visible");
       }, 3500);
