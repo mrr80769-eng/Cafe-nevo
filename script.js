@@ -177,6 +177,12 @@ function renderMenu(key) {
         </div>
       </article>
     `).join("");
+
+    // انیمیشن ورود یکی‌یکی
+    const cards = products.querySelectorAll(".product");
+    cards.forEach((card, i) => {
+      setTimeout(() => card.classList.add("visible"), 40 + i * 55);
+    });
   }
 
   const section = document.getElementById("menuProducts");
