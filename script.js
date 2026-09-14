@@ -210,7 +210,6 @@ let selectedTable = null;
 function buildTableGrid() {
   const grid = document.getElementById("tableGrid");
   if (!grid) return;
-
   grid.innerHTML = "";
   for (let i = 1; i <= 12; i++) {
     const btn = document.createElement("button");
@@ -226,7 +225,6 @@ function selectTable(num, btn) {
   selectedTable = num;
   document.querySelectorAll(".table-btn").forEach(b => b.classList.remove("selected"));
   btn.classList.add("selected");
-
   const submitBtn = document.getElementById("orderSubmitBtn");
   if (submitBtn) {
     submitBtn.disabled = false;
@@ -238,7 +236,6 @@ function openOrderModal() {
   document.querySelectorAll(".table-btn").forEach(b => b.classList.remove("selected"));
   const submitBtn = document.getElementById("orderSubmitBtn");
   if (submitBtn) submitBtn.disabled = true;
-
   const modal = document.getElementById("orderModal");
   if (modal) modal.classList.add("active");
 }
@@ -283,9 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (submitBtn) {
     submitBtn.onclick = () => {
       if (!selectedTable) return;
-
       console.log("درخواست سفارش برای میز:", selectedTable);
-
       closeOrderModal();
       showToast(selectedTable);
     };
@@ -297,9 +292,11 @@ const originalRenderMenu = renderMenu;
 renderMenu = function(key) {
   originalRenderMenu(key);
 
-  // دکمه پایین محصولات
   const productsEl = document.getElementById("products");
-  if (productsEl && !productsEl.querySelector(".category-order-btn")) {
+  if (!productsEl) return;
+
+  // دکمه پایین محصولات
+  if (!productsEl.querySelector(".category-order-btn")) {
     const orderBtn = document.createElement("button");
     orderBtn.className = "category-order-btn";
     orderBtn.innerHTML = `<span>🔔</span> درخواست سفارش`;
@@ -310,7 +307,7 @@ renderMenu = function(key) {
   // تولتیپ روی هر محصول
   const cards = productsEl.querySelectorAll(".product");
   cards.forEach(card => {
-    // حذف تولتیپ قبلی اگر وجود داشت
+    // حذف تولتیپ قبلی
     const oldTip = card.querySelector(".product-tooltip");
     if (oldTip) oldTip.remove();
 
@@ -327,21 +324,32 @@ renderMenu = function(key) {
       tip.classList.remove("visible");
     });
 
-    let timer = null;
+    let showTimer = null;
+    let hideTimer = null;
+
     const showTip = () => {
-      timer = setTimeout(() => {
+      clearTimeout(hideTimer);
+      showTimer = setTimeout(() => {
         tip.classList.add("visible");
-      }, 2500);
+      }, 2200); // حدود ۲.۲ ثانیه نگه داشتن
     };
+
     const hideTip = () => {
-      clearTimeout(timer);
-      tip.classList.remove("visible");
+      clearTimeout(showTimer);
+      // روی موبایل کمی بیشتر نگه می‌داریم تا بشه روش زد
+      hideTimer = setTimeout(() => {
+        tip.classList.remove("visible");
+      }, 3500);
     };
 
+    // دسکتاپ
     card.addEventListener("mouseenter", showTip);
-    card.addEventListener("mouseleave", hideTip);
+    card.addEventListener("mouseleave", () => {
+      clearTimeout(showTimer);
+      tip.classList.remove("visible");
+    });
 
-    // برای موبایل
+    // موبایل
     card.addEventListener("touchstart", showTip, { passive: true });
     card.addEventListener("touchend", hideTip);
     card.addEventListener("touchcancel", hideTip);
