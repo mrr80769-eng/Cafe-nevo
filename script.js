@@ -89,7 +89,7 @@ const menu = {
       { name: "تست سوسیس تخم مرغ", price: 285, img: "sausage-toast.jpg" },
       { name: "املت فرانسوی", price: 370, img: "french-omelette.jpg" },
       { name: "تست کره بادام زمینی", price: 270, img: "peanut-toast.jpg" },
-      { name: "املت قارچ پنیر", price: 288, img: "mushroom-omelette.jpg" },
+      { name: "املت قارچ پنیر", price: 288, img: "mushroom-omelettee.jpg" },
       { name: "اوتمیل", price: 295, img: "oatmeal.jpg" }
     ]
   },
