@@ -203,5 +203,149 @@ if (backBtn) {
     }
   };
 }
+/* ========== سیستم درخواست سفارش ========== */
+
+let selectedTable = null;
+let hoverTimers = new Map();
+
+// ساخت دکمه‌های میز
+function buildTableGrid() {
+  const grid = document.getElementById("tableGrid");
+  if (!grid) return;
+  
+  grid.innerHTML = "";
+  for (let i = 1; i <= 12; i++) {
+    const btn = document.createElement("button");
+    btn.className = "table-btn";
+    btn.textContent = i;
+    btn.dataset.table = i;
+    btn.onclick = () => selectTable(i, btn);
+    grid.appendChild(btn);
+  }
+}
+
+function selectTable(num, btn) {
+  selectedTable = num;
+  document.querySelectorAll(".table-btn").forEach(b => b.classList.remove("selected"));
+  btn.classList.add("selected");
+  
+  const submitBtn = document.getElementById("orderSubmitBtn");
+  if (submitBtn) {
+    submitBtn.disabled = false;
+  }
+}
+
+function openOrderModal() {
+  selectedTable = null;
+  document.querySelectorAll(".table-btn").forEach(b => b.classList.remove("selected"));
+  const submitBtn = document.getElementById("orderSubmitBtn");
+  if (submitBtn) submitBtn.disabled = true;
+  
+  const modal = document.getElementById("orderModal");
+  if (modal) modal.classList.add("active");
+}
+
+function closeOrderModal() {
+  const modal = document.getElementById("orderModal");
+  if (modal) modal.classList.remove("active");
+}
+
+function showToast(tableNum) {
+  const toast = document.getElementById("orderToast");
+  const msg = document.getElementById("toastMessage");
+  if (msg) msg.textContent = `میز ${tableNum} — گارسون به زودی سر میز شما می‌آید`;
+  if (toast) {
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 4000);
+  }
+}
+
+// اتصال دکمه‌ها
+document.addEventListener("DOMContentLoaded", () => {
+  buildTableGrid();
+
+  // دکمه شناور
+  const floatBtn = document.getElementById("orderFloatBtn");
+  if (floatBtn) floatBtn.onclick = openOrderModal;
+
+  // بستن مودال
+  const closeBtn = document.getElementById("orderModalClose");
+  if (closeBtn) closeBtn.onclick = closeOrderModal;
+
+  // کلیک روی پس‌زمینه مودال
+  const overlay = document.getElementById("orderModal");
+  if (overlay) {
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeOrderModal();
+    });
+  }
+
+  // دکمه ثبت درخواست
+  const submitBtn = document.getElementById("orderSubmitBtn");
+  if (submitBtn) {
+    submitBtn.onclick = () => {
+      if (!selectedTable) return;
+      
+      // فعلاً فقط پیام موفقیت نشون می‌دیم
+      // بعداً اینجا به Firebase وصل می‌شه
+      console.log("درخواست سفارش برای میز:", selectedTable);
+      
+      closeOrderModal();
+      showToast(selectedTable);
+      
+      // اینجا بعداً درخواست رو به سرور می‌فرستیم
+    };
+  }
+});
+
+// اضافه کردن دکمه و تولتیپ داخل renderMenu
+const originalRenderMenu = renderMenu;
+renderMenu = function(key) {
+  originalRenderMenu(key);
+
+  // دکمه پایین محصولات
+  const productsEl = document.getElementById("products");
+  if (productsEl && !productsEl.querySelector(".category-order-btn")) {
+    const orderBtn = document.createElement("button");
+    orderBtn.className = "category-order-btn";
+    orderBtn.innerHTML = `<span>🔔</span> درخواست سفارش`;
+    orderBtn.onclick = openOrderModal;
+    productsEl.appendChild(orderBtn);
+  }
+
+  // تولتیپ روی هر محصول
+  const cards = productsEl.querySelectorAll(".product");
+  cards.forEach(card => {
+    // حذف تولتیپ قبلی اگر وجود داشت
+    const oldTip = card.querySelector(".product-tooltip");
+    if (oldTip) oldTip.remove();
+
+    const tip = document.createElement("div");
+    tip.className = "product-tooltip";
+    tip.textContent = "می‌خوای سفارش بدی؟";
+    card.appendChild(tip);
+
+    let timer = null;
+
+    const showTip = () => {
+      timer = setTimeout(() => {
+        tip.classList.add("visible");
+      }, 2500); // بعد از ۲.۵ ثانیه
+    };
+
+    const hideTip = () => {
+      clearTimeout(timer);
+      tip.classList.remove("visible");
+    };
+
+    card.addEventListener("mouseenter", showTip);
+    card.addEventListener("mouseleave", hideTip);
+
+    // برای موبایل (لمس طولانی)
+    card.addEventListener("touchstart", showTip, { passive: true });
+    card.addEventListener("touchend", hideTip);
+    card.addEventListener("touchcancel", hideTip);
+  });
+};
 
 renderMenu("hot");
