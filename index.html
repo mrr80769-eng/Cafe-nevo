@@ -259,5 +259,46 @@
   <span class="ig-icon">◎</span>
   <span class="ig-text">Instagram</span>
 </a>
+  <!-- ========== سیستم درخواست سفارش ========== -->
+
+<!-- دکمه شناور درخواست سفارش -->
+<button class="order-float-btn" id="orderFloatBtn" title="درخواست سفارش">
+  <span class="order-float-icon">🔔</span>
+  <span class="order-float-text">درخواست سفارش</span>
+</button>
+
+<!-- مودال انتخاب میز -->
+<div class="order-modal-overlay" id="orderModal">
+  <div class="order-modal">
+    <button class="order-modal-close" id="orderModalClose">×</button>
+    
+    <div class="order-modal-header">
+      <span class="order-modal-eyebrow">CAFE NEVO</span>
+      <h3>درخواست سفارش</h3>
+      <p>شماره میز خود را انتخاب کنید</p>
+    </div>
+
+    <div class="table-grid" id="tableGrid">
+      <!-- میزهای ۱ تا ۱۲ با جاوااسکریپت ساخته می‌شن -->
+    </div>
+
+    <div class="order-modal-footer">
+      <button class="order-submit-btn" id="orderSubmitBtn" disabled>
+        ثبت درخواست
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- پیام موفقیت -->
+<div class="order-toast" id="orderToast">
+  <div class="order-toast-content">
+    <span class="toast-icon">✓</span>
+    <div>
+      <strong>درخواست ثبت شد</strong>
+      <p id="toastMessage">گارسون به زودی سر میز شما می‌آید</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
