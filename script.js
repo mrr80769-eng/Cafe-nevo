@@ -22,13 +22,13 @@ const menu = {
     title: "بار سرد",
     en: "COLD BAR",
     items: [
-      { name: "بلک دایموند", price: 297, img: "black-diamond.jpg" },
-      { name: "فارست", price: 287, img: "forest.jpg" },
-      { name: "رد وایو", price: 278, img: "red-wave.jpg" },
+      { name: "بلک دایموند", price: 297, img: "black-diamond.jpg", desc: "سر دم چایی، لیچی، کربن فعال" },
+      { name: "فارست", price: 287, img: "forest.jpg", desc: "عصاره خیار، آناناس، آلوورا" },
+      { name: "رد وایو", price: 278, img: "red-wave.jpg", desc: "انار، لیمو، آلبالو" },
       { name: "موهیتو", price: 248, img: "mojito.jpg" },
       { name: "لیموناد", price: 228, img: "lemonade.jpg" },
-      { name: "ولوت پینک", price: 294, img: "velvet-pinki.jpg" },
-      { name: "میدنایت بلو", price: 287, img: "midnight-blue.jpg" },
+      { name: "ولوت پینک", price: 294, img: "velvet-pinki.jpg", desc: "آناناس، آلوورا" },
+      { name: "میدنایت بلو", price: 287, img: "midnight-blue.jpg", desc: "آناناس، نارگیل" },
       { name: "رد موهیتو", price: 378, img: "red-mojito.jpg" }
     ]
   },
@@ -61,6 +61,25 @@ const menu = {
       { name: "آیس اوبه", price: 330, img: "iced-ube.jpg" },
       { name: "آیس اسپرولینا", price: 327, img: "iced-spirulina.jpg" },
       { name: "آیس تارو", price: 338, img: "iced-taro.jpg" }
+    ]
+  },
+  smoothie: {
+    title: "اسموتی",
+    en: "SMOOTHIE",
+    items: [
+      { name: "بری اسمش", price: 377, img: "berry-smash.jpg", desc: "شیر بادام، آناناس، تمشک" },
+      { name: "تروپیکال", price: 379, img: "tropical.jpg", desc: "شیر بادام، انبه، آناناس" },
+      { name: "انبه با موز", price: 388, img: "mango-banana.jpg" },
+      { name: "توت فرنگی با آناناس", price: 388, img: "strawberry-pineapple.jpg" },
+      { name: "آناناس با انبه", price: 388, img: "pineapple-mango.jpg" }
+    ]
+  },
+  whey: {
+    title: "اسموتی بر پایه وی",
+    en: "WHEY SMOOTHIE",
+    items: [
+      { name: "فروس", price: 527, img: "ferrous.jpg", desc: "پروتئین وی، شیر بادام، انبه" },
+      { name: "پرومیت", price: 527, img: "promit.jpg", desc: "آناناس، شیر بادام" }
     ]
   },
   shake: {
@@ -171,6 +190,7 @@ function renderMenu(key) {
         <div class="product-image" ${item.img ? `style="background-image: url('${item.img}')"` : ""}></div>
         <div class="product-info">
           <p class="product-name">${item.name}</p>
+          ${item.desc ? `<p class="product-desc">${item.desc}</p>` : ""}
           ${formatPrice(item.price)}
         </div>
       </article>
@@ -260,7 +280,6 @@ async function sendWaiterRequest(table) {
       },
       body: JSON.stringify({ table: table })
     });
-
     const result = await response.json();
     return result.ok === true;
   } catch (error) {
@@ -272,15 +291,12 @@ async function sendWaiterRequest(table) {
 // اتصال دکمه‌ها
 document.addEventListener("DOMContentLoaded", () => {
   buildTableGrid();
-
   // دکمه شناور
   const floatBtn = document.getElementById("orderFloatBtn");
   if (floatBtn) floatBtn.onclick = openOrderModal;
-
   // بستن مودال
   const closeBtn = document.getElementById("orderModalClose");
   if (closeBtn) closeBtn.onclick = closeOrderModal;
-
   // کلیک روی پس‌زمینه مودال
   const overlay = document.getElementById("orderModal");
   if (overlay) {
@@ -288,26 +304,21 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target === overlay) closeOrderModal();
     });
   }
-
   // دکمه ثبت درخواست
   const submitBtn = document.getElementById("orderSubmitBtn");
   if (submitBtn) {
     submitBtn.onclick = async () => {
       if (!selectedTable) return;
-
       // غیرفعال کردن دکمه موقع ارسال
       submitBtn.disabled = true;
       submitBtn.textContent = "در حال ارسال...";
-
       const success = await sendWaiterRequest(selectedTable);
-
       if (success) {
         closeOrderModal();
         showToast(selectedTable);
       } else {
         alert("خطا در ارسال درخواست. لطفاً دوباره تلاش کنید.");
       }
-
       // برگردوندن دکمه به حالت اولیه
       submitBtn.disabled = false;
       submitBtn.textContent = "ثبت درخواست";
@@ -352,33 +363,39 @@ renderMenu = function(key) {
     });
 
     let showTimer = null;
-    let hideTimer = null;
 
     const showTip = () => {
-      clearTimeout(hideTimer);
+      clearTimeout(showTimer);
       showTimer = setTimeout(() => {
         tip.classList.add("visible");
-      }, 2200);
+      }, 1800);
     };
 
     const hideTip = () => {
       clearTimeout(showTimer);
-      hideTimer = setTimeout(() => {
-        tip.classList.remove("visible");
-      }, 3500);
+      tip.classList.remove("visible");
     };
 
     // دسکتاپ
     card.addEventListener("mouseenter", showTip);
-    card.addEventListener("mouseleave", () => {
-      clearTimeout(showTimer);
-      tip.classList.remove("visible");
-    });
+    card.addEventListener("mouseleave", hideTip);
 
     // موبایل
-    card.addEventListener("touchstart", showTip, { passive: true });
-    card.addEventListener("touchend", hideTip);
-    card.addEventListener("touchcancel", hideTip);
+    let touchTimer = null;
+    card.addEventListener("touchstart", () => {
+      touchTimer = setTimeout(() => {
+        tip.classList.add("visible");
+      }, 600);
+    }, { passive: true });
+
+    card.addEventListener("touchend", () => {
+      clearTimeout(touchTimer);
+    });
+
+    card.addEventListener("touchcancel", () => {
+      clearTimeout(touchTimer);
+      tip.classList.remove("visible");
+    });
   });
 };
 
