@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
-
 :root {
     --bg: #06100b;
     --green: #9fdf72;
@@ -9,15 +8,12 @@
     --line: rgba(159, 223, 114, .22);
     --line2: rgba(255, 255, 255, .08);
 }
-
 * { box-sizing: border-box; }
-
 html {
     scroll-behavior: smooth;
     max-width: 100%;
     overflow-x: hidden;
 }
-
 body {
     margin: 0;
     color: var(--white);
@@ -28,17 +24,14 @@ body {
     overflow-x: hidden;
     max-width: 100vw;
 }
-
 a { color: inherit; text-decoration: none; }
 button { font: inherit; border: none; background: none; cursor: pointer; }
 img { max-width: 100%; height: auto; }
-
 /* Grain */
 .grain {
     position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: .035;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
 }
-
 /* Topbar */
 .topbar {
     position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 40;
@@ -49,7 +42,6 @@ img { max-width: 100%; height: auto; }
 .mini-brand { display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .18em; }
 .mini-brand img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); }
 .instagram-mini { font-size: 12px; color: var(--green); border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; }
-
 /* Hero */
 .hero {
     min-height: 100svh; position: relative; display: grid; place-items: center;
@@ -87,7 +79,6 @@ img { max-width: 100%; height: auto; }
     position: absolute; bottom: 24px; left: 5vw; right: 5vw;
     display: flex; justify-content: space-between; color: #758878; font-size: 9px; letter-spacing: .16em;
 }
-
 /* Menu Section */
 .menu-section { max-width: 1120px; margin: auto; padding: 100px 20px 80px; position: relative; }
 .menu-page-head { text-align: center; margin-bottom: 28px; }
@@ -104,7 +95,6 @@ img { max-width: 100%; height: auto; }
     letter-spacing: .22em; color: #dcefa0;
 }
 .menu-page-head > p { margin: 0; color: rgba(243,247,237,.72); font-size: 14px; letter-spacing: .18em; }
-
 /* Categories */
 .menu-categories {
     width: min(100%, 850px); margin: 0 auto;
@@ -149,7 +139,6 @@ img { max-width: 100%; height: auto; }
     box-shadow: 0 16px 45px rgba(0,0,0,.4), 0 0 40px rgba(159,223,114,.22);
     transform: translateY(-5px) scale(1.02);
 }
-
 /* Products */
 .menu-shell {
     margin-top: 30px; border: 1px solid var(--line); border-radius: 30px;
@@ -167,14 +156,12 @@ img { max-width: 100%; height: auto; }
 .panel-en { font-size: 9px; letter-spacing: .2em; color: var(--green); }
 .menu-head h3 { margin: 6px 0 0; font-size: 24px; font-weight: 500; }
 .leaf-word { font-size: 10px; letter-spacing: .3em; color: #718875; }
-
 .products {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
     padding: 28px 20px 28px;
 }
-
 /* ===== Product Card ===== */
 .product {
     display: flex;
@@ -217,7 +204,6 @@ img { max-width: 100%; height: auto; }
     font-size: 28px;
     color: rgba(159, 223, 114, 0.4);
 }
-
 /* ===== HOVER قوی ===== */
 .product:hover {
     background: rgba(159, 223, 114, 0.1);
@@ -241,12 +227,11 @@ img { max-width: 100%; height: auto; }
     color: #c8f08a;
     text-shadow: 0 0 12px rgba(159, 223, 114, 0.45);
 }
-
 .product-info {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
 }
 .product-name {
     margin: 0;
@@ -255,6 +240,14 @@ img { max-width: 100%; height: auto; }
     color: #f3f7ed;
     line-height: 1.35;
     transition: color .3s ease;
+}
+.product-desc {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 400;
+    color: #8a9e8c;
+    line-height: 1.4;
+    opacity: 0.9;
 }
 .price {
     font-size: 14px;
@@ -274,7 +267,6 @@ img { max-width: 100%; height: auto; }
     color: var(--muted);
     font-size: 15px;
 }
-
 /* Info & Footer */
 .info-section, .qr-section {
     max-width: 1120px;
@@ -306,18 +298,11 @@ footer {
     flex-shrink: 0;
 }
 .footer-brand img {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
+    width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
 }
 .footer-location {
-    flex: 1;
-    text-align: center;
-    min-width: 0;
+    flex: 1; text-align: center; min-width: 0;
 }
-
 /* Floating buttons */
 .back-to-categories {
     position: fixed;
@@ -338,7 +323,6 @@ footer {
     box-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 .back-to-categories.visible { display: flex; }
-
 .instagram-float {
     position: fixed;
     bottom: 28px;
@@ -360,7 +344,6 @@ footer {
 .instagram-float:hover {
     transform: translateY(-5px) scale(1.05);
 }
-
 /* Mobile */
 @media (max-width: 720px) {
     .topbar { height: 62px; padding: 0 18px; }
@@ -391,12 +374,14 @@ footer {
     .product-name {
         font-size: 13px;
     }
+    .product-desc {
+        font-size: 10px;
+    }
     .price {
         font-size: 13px;
     }
     .footer-brand img {
-        width: 24px;
-        height: 24px;
+        width: 24px; height: 24px;
     }
     footer {
         padding: 24px 18px;
@@ -410,9 +395,7 @@ footer {
     }
     .back-to-categories { bottom: 20px; }
 }
-
 /* ========== سیستم درخواست سفارش ========== */
-
 /* دکمه شناور */
 .order-float-btn {
   position: fixed;
@@ -440,7 +423,6 @@ footer {
 .order-float-icon {
   font-size: 18px;
 }
-
 /* دکمه داخل دسته محصولات */
 .category-order-btn {
   grid-column: 1 / -1;
@@ -464,8 +446,7 @@ footer {
   border-color: rgba(180, 235, 125, 0.8);
   transform: translateY(-2px);
 }
-
-/* تولتیپ روی محصول - اصلاح شده */
+/* تولتیپ روی محصول */
 .product-tooltip {
   position: absolute;
   bottom: 12px;
@@ -480,19 +461,17 @@ footer {
   border-radius: 30px;
   white-space: nowrap;
   opacity: 0;
-  pointer-events: none;          /* پیش‌فرض غیرقابل کلیک */
+  pointer-events: none;
   transition: all 0.3s ease;
   z-index: 5;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   cursor: pointer;
 }
-
 .product-tooltip.visible {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
-  pointer-events: auto;          /* وقتی ظاهر شد قابل کلیک می‌شه */
+  pointer-events: auto;
 }
-
 .product-tooltip::after {
   content: "";
   position: absolute;
@@ -502,7 +481,6 @@ footer {
   border: 6px solid transparent;
   border-top-color: rgba(159, 223, 114, 0.5);
 }
-
 /* مودال */
 .order-modal-overlay {
   position: fixed;
@@ -576,7 +554,6 @@ footer {
   font-size: 14px;
   color: #9bad9c;
 }
-
 /* گرید میزها */
 .table-grid {
   display: grid;
@@ -606,7 +583,6 @@ footer {
   color: #06100b;
   box-shadow: 0 8px 24px rgba(159, 223, 114, 0.35);
 }
-
 /* دکمه ثبت */
 .order-submit-btn {
   width: 100%;
@@ -628,7 +604,6 @@ footer {
   transform: translateY(-2px);
   box-shadow: 0 10px 28px rgba(159, 223, 114, 0.4);
 }
-
 /* Toast موفقیت */
 .order-toast {
   position: fixed;
@@ -680,7 +655,6 @@ footer {
   font-size: 13px;
   color: #9bad9c;
 }
-
 /* موبایل */
 @media (max-width: 720px) {
   .order-float-btn {
@@ -689,16 +663,13 @@ footer {
     padding: 12px 16px 12px 14px;
     font-size: 13px;
   }
-  
   .order-float-text {
     display: none;
   }
-  
   .table-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
   }
-  
   .table-btn {
     font-size: 18px;
   }
