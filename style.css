@@ -107,8 +107,16 @@ img { max-width: 100%; height: auto; }
     transition: all .3s ease;
 }
 .menu-category img {
-    position: absolute; top: 0; right: 0; width: 40%; height: 100%;
-    object-fit: cover; border-radius: 0 23px 23px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0 23px 23px 0;
+    max-width: 40%;
+    max-height: 100%;
 }
 .menu-category::after {
     content: ""; position: absolute; inset: 0;
@@ -352,7 +360,14 @@ footer {
     .logo-frame { width: 140px; height: 140px; }
     .menu-section { padding-top: 75px; }
     .menu-category { height: 106px; border-radius: 18px; }
-    .menu-category img { width: 43%; border-radius: 0 18px 18px 0; }
+    .menu-category img {
+        width: 43%;
+        border-radius: 0 18px 18px 0;
+        object-fit: cover;
+        object-position: center;
+        max-width: 43%;
+        max-height: 100%;
+    }
     .category-icon { left: 22px; font-size: 26px; }
     .category-text { left: 85px; }
     .category-text strong { font-size: 18px; }
